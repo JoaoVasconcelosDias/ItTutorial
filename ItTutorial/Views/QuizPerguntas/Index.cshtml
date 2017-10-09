@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ItTutorial.Models.QuizPergunta>
+
+        @foreach (var item in Model)
+        {
+            
+             @Html.Partial("Quizparcial", item)
+
+        }
+ 
+<input id="Button1" type="button" value="SUBMIT" />

@@ -17,9 +17,16 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index(int id, [Bind("Id,Title")] Subcategorias subcategorias)
         {
-            return View(await _context.Categorias.ToListAsync());
+            var dataBaseContext = _context.Categorias.Include(c => c.Subcategorias);
+            return View(await dataBaseContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> PostsIndex()
+        {
+            var dataBaseContext = _context.Subcategorias.Include(c => c.Posts);
+            return View(await dataBaseContext.ToListAsync());
         }
     }
 }

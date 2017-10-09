@@ -99,7 +99,7 @@ namespace ItTutorial.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(videos);
-        }
+}
 
         // GET: Videos/Edit/5
         public async Task<IActionResult> Edit(int? id)

@@ -1,0 +1,56 @@
+﻿@model ItTutorial.Models.QuizPergunta
+   
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerguntaExtenso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerguntaOpcao1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerguntaOpcao2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerguntaOpcao3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PerguntaOpcao4)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.PerguntaExtenso)
+                    </td>
+                    <td>
+                        <input id="btnSubmit1" type="radio" name="recebeOpcao" value="a"/>
+                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao1)
+                    </td>
+                    <td>
+                        <input id="btnSubmit2" type="radio" name="recebeOpcao" value="b"/>
+                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao2)
+                    </td>
+                    <td>
+                        <input id="btnSubmit3" type="radio" name="recebeOpcao" value="c"/>
+                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao3)
+                    </td>
+                    <td>
+                        <input id="btnSubmit4" type="radio" name="recebeOpcao" value="d"/>
+                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao4)
+                    </td>
+
+                </tr>
+
+            
+        </tbody>
+
+    </table>
+
+}
