@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Protocols;
 using System.Data;
 
 
+
 namespace ItTutorial.Controllers
 {
     public class QuizsController : Controller
@@ -76,25 +77,27 @@ namespace ItTutorial.Controllers
             return View(quiz);
         }
 
-        //public void Button_Click(string btnSubmit1, string btnSubmit2, string btnSubmit3, string btnSubmit4, object sender, System.EventArgs e)
-        //{
-        //    if (this.btnSubmit1.Checked)
-        //    {
-                
-        //    }
-        //    else if (btnSubmit2.Checked)
-        //    {
-                
-        //    }
-        //    else if (btnSubmit3.Checked)
-        //    {
-                
-        //    }
-        //    else (btnSubmit4.Checked)
-        //    {
 
-        //    }
-        //}
+        public void Button1_Click(string Radio1, string Radio2, string Radio3, string Radio4, object sender, System.EventArgs e)
+        {
+            if (Radio1.Checked == true)
+            {
+
+            }
+            else if (Radio2.Checked == true)
+            {
+
+            }
+            else if (Radio3.Checked)
+            {
+
+            }
+            else (Radio4.Checked)
+            {
+
+            }
+        }
+    
 
 
 
