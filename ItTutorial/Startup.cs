@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ItTutorial.Data;
 using ItTutorial.Models;
 using ItTutorial.Services;
+using Microsoft.Extensions.Logging;
 
 namespace ItTutorial
 {
@@ -60,7 +61,7 @@ namespace ItTutorial
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -83,6 +84,23 @@ namespace ItTutorial
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            CreateRoles(serviceProvider);
+        }
+        private void CreateRoles(IServiceProvider serviceProvider)
+        {
+            //initializing custom roles 
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            string[] roleNames = { "Admin", "User" };
+            Task<IdentityResult> roleResult;
+            foreach (var roleName in roleNames)
+            {
+                Task<bool> roleExist = RoleManager.RoleExistsAsync(roleName);
+                if (!roleExist.Result)
+                {
+                    roleResult = RoleManager.CreateAsync(new IdentityRole(roleName));
+                    roleResult.Wait();
+                }
+            }
         }
     }
 }
