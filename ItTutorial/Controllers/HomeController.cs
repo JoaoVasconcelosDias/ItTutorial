@@ -29,6 +29,13 @@ namespace ItTutorial.Controllers
             return View();
         }
 
+        public IActionResult Certification()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
