@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ItTutorial.Models.Posts>
+
+@{
+    ViewData["Title"] = "PostsIndex";
+}
+
+<h2>PostsIndex</h2>
+
+@foreach (var post in Model)
+{
+
+    <div>
+        @Html.DisplayFor(modelItem => post.Post)
+    </div>
+}

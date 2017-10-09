@@ -7,7 +7,5 @@ namespace ItTutorial.Models
     {
         public int Id { get; set; }
         public string Apontamentos { get; set; }
-
-        public Anotacoes Anotacoes { get; set; }
     }
 }
