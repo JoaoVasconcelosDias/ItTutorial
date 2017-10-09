@@ -90,7 +90,7 @@ namespace ItTutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Source,LinguagemId")] Videos videos)
+        public async Task<IActionResult> Create([Bind("Id,Title,Source,LinguagemId,Notes")] Videos videos)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace ItTutorial.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(videos);
-        }
+}
 
         // GET: Videos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -122,7 +122,7 @@ namespace ItTutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Source,LinguagemId")] Videos videos)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Source,LinguagemId,Notes")] Videos videos)
         {
             if (id != videos.Id)
             {

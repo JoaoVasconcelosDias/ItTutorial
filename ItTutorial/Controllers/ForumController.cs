@@ -28,6 +28,5 @@ namespace ItTutorial.Controllers
             var dataBaseContext = _context.Subcategorias.Include(c => c.Posts);
             return View(await dataBaseContext.ToListAsync());
         }
-
     }
 }
