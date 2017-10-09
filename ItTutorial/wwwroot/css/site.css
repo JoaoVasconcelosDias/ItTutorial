@@ -17,8 +17,8 @@
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.carousel-inner .item img {
+    width: 700px;
 }
 
 /* QR code generator */
@@ -26,11 +26,15 @@
     margin: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
+/* Hide/rearrange for smaller screens 767px*/
+@media screen and (max-width: 300px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
     }
+
 }
 
+.navbar-right {
+	float: right !important;
+}
