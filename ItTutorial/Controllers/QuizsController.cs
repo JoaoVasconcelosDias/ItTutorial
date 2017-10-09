@@ -76,25 +76,25 @@ namespace ItTutorial.Controllers
             return View(quiz);
         }
 
-        public void Button_Click(string btnSubmit1, string btnSubmit2, string btnSubmit3, string btnSubmit4, object sender, System.EventArgs e)
-        {
-            if (this.btnSubmit1.Checked)
-            {
+        //public void Button_Click(string btnSubmit1, string btnSubmit2, string btnSubmit3, string btnSubmit4, object sender, System.EventArgs e)
+        //{
+        //    if (this.btnSubmit1.Checked)
+        //    {
                 
-            }
-            else if (btnSubmit2.Checked)
-            {
+        //    }
+        //    else if (btnSubmit2.Checked)
+        //    {
                 
-            }
-            else if (btnSubmit3.Checked)
-            {
+        //    }
+        //    else if (btnSubmit3.Checked)
+        //    {
                 
-            }
-            else (btnSubmit4.Checked)
-            {
+        //    }
+        //    else (btnSubmit4.Checked)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
 
 
