@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ItTutorial.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ItTutorial.Controllers
 {
@@ -14,7 +15,7 @@ namespace ItTutorial.Controllers
         {
             return View();
         }
-
+        [Authorize (Roles = "Admin")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

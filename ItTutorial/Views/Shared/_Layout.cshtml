@@ -85,21 +85,6 @@
 						</li>
 					</ul>
 				</li>
-
-           
-				@*<li>
-		<form asp-action="Index" method="get">
-			<ul class="form-actions nav navbar-nav navbar-right">
-
-				<li>
-					<input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-					<input type="submit" value="Search" class="btn btn-default" />
-					<gcse:searchbox></gcse:searchbox>
-				</li>
-
-			</ul>
-		</form>
-	</li> *@
 				
 				<li>
 					<form method="get" action="http://www.google.com/search" class="nav navbar-nav navbar-right">
@@ -114,16 +99,10 @@
 						Search on Web
 						<input type="radio" name="sitesearch" value="c-sharpcorner.com" checked />
 	Search from c-sharpcorner<br />
-
-						
-
-
-
 	@*<input type="radio" name="sitesearch" value="msdn.microsoft.com" checked />
 	search on MSDN*@
 					</form>
 				</li>
-
             @await Html.PartialAsync("_LoginPartial")
            
 		</ul>
