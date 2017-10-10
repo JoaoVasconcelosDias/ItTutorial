@@ -30,19 +30,21 @@
                         @Html.DisplayFor(modelItem => Model.PerguntaExtenso)
                     </td>
                     <td>
-                        <input id="btnSubmit1" type="radio" name="recebeOpcao" value="a"/>
+                        <input id="Radio1" type="radio" name="recebeOpcao" value="a" runat="server" checked="checked" onclick="GetHTMLRadioButtonSelectedValue()"/>
+                        <!--runat="server" attribute for your html radio button it will be accessible on the code behind.-->
                         @Html.DisplayFor(modelItem => Model.PerguntaOpcao1)
                     </td>
                     <td>
-                        <input id="btnSubmit2" type="radio" name="recebeOpcao" value="b"/>
+                        <input id="Radio2" type="radio" name="recebeOpcao" value="b"/>
+                        <asp:Button ID="Button2" runat="server" Text="Button" onclick="Button2_Click" />
                         @Html.DisplayFor(modelItem => Model.PerguntaOpcao2)
                     </td>
                     <td>
-                        <input id="btnSubmit3" type="radio" name="recebeOpcao" value="c"/>
+                        <input id="Radio3" type="radio" name="recebeOpcao" value="c"/>
                         @Html.DisplayFor(modelItem => Model.PerguntaOpcao3)
                     </td>
                     <td>
-                        <input id="btnSubmit4" type="radio" name="recebeOpcao" value="d"/>
+                        <input id="Radio4" type="radio" name="recebeOpcao" value="d"/>
                         @Html.DisplayFor(modelItem => Model.PerguntaOpcao4)
                     </td>
 
