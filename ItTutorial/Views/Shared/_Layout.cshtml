@@ -20,10 +20,7 @@
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-			@*<div class="navbar-header">
-		
-	</div>*@
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav navbar-left">
 				<li class="active">
 					@Html.ActionLink("Home", "Index", "Home")
 				</li>
@@ -84,25 +81,21 @@
 							@Html.ActionLink("Certification", "Certification", "Home")
 						</li>
 					</ul>
-				</li>
-				
-				<li>
-					<form method="get" action="http://www.google.com/search" class="nav navbar-nav navbar-right">
-						<input type="text" name="q" size="20" maxlength="150" value="" />
-						
-						@*<input type="submit" value="Search" />*@
-						<button type="submit" value="Search" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> Search
-						</button>
-
-						<br /> <input type="radio" name="sitesearch" value="" />
-						Search on Web
-						<input type="radio" name="sitesearch" value="c-sharpcorner.com" checked />
-	Search from c-sharpcorner<br />
-	@*<input type="radio" name="sitesearch" value="msdn.microsoft.com" checked />
-	search on MSDN*@
-					</form>
-				</li>
+				</li>				     				
+				<li id="search-10" class="widget_search">
+                        <form method="get" action="http://www.google.com/search" class="nav navbar-nav navbar-right">
+                            <input type="text" name="q" size="20" maxlength="150" value="" />
+                            <button type="submit" value="Search" class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span> Search
+                            </button>
+                            <br /> <input type="radio" name="sitesearch" value="" />
+                            Search on Web
+                            <input type="radio" name="sitesearch" value="c-sharpcorner.com" checked />
+                            Search from c-sharpcorner<br />
+                            @*<input type="radio" name="sitesearch" value="msdn.microsoft.com" checked />
+                search on MSDN*@
+                        </form>
+                </li>
             @await Html.PartialAsync("_LoginPartial")
            
 		</ul>
@@ -113,12 +106,30 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div class="container text-center">
+            <h3>What We Do</h3><br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    <p>HTML</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    <p>Javascript</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    <p>C#</p>
+                </div>
+            </div>
+        </div><br>
+
         <footer>
             <div class="navbar navbar-inverse navbar-fixed-bottom">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
-                <p>&copy; @DateTime.Now.Year - ItTutorial</p>
+                <p class="nav navbar-nav navbar-right">&copy; @DateTime.Now.Year - ItTutorial</p>
             </div>
         </footer>
     </div>
