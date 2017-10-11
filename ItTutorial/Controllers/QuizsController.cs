@@ -98,25 +98,25 @@ namespace ItTutorial.Controllers
         //}
 
 
-        //public void Button1_Click(string Radio1, string Radio2, string Radio3, string Radio4, object sender, System.EventArgs e)
-        //{
-         //   if (Radio1.Checked == true)
-           // {
+        public void Button1_Click(string Radio1, string Radio2, string Radio3, string Radio4, object sender, System.EventArgs e)
+        {
+            if (Radio1.Checked == true)
+            {
 
-           // }
-           // else if (Radio2.Checked == true)
-           // {
+            }
+            else if (Radio2.Checked == true)
+            {
 
-            //}
-            //else if (Radio3.Checked)
-            //{
+            }
+            else if (Radio3.Checked)
+            {
 
-           // }
-           // else (Radio4.Checked);
-           // {
+            }
+            else (Radio4.Checked)
+            {
 
-           // }
-       // }
+            }
+        }
     
 
 
