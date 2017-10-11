@@ -98,7 +98,7 @@ namespace ItTutorial.Controllers
         //}
 
 
-        public void Button1_Click(string Radio1, string Radio2, string Radio3, string Radio4, object sender, System.EventArgs e)
+        /*public void Button1_Click(string Radio1, string Radio2, string Radio3, string Radio4, object sender, System.EventArgs e)
         {
             if (Radio1.Checked == true)
             {
@@ -116,7 +116,7 @@ namespace ItTutorial.Controllers
             {
 
             }
-        }
+        }*/
     
 
 
