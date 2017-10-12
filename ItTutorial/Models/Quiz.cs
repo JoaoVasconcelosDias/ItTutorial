@@ -14,8 +14,7 @@ namespace ItTutorial.Models
         public int LinguagemId { get; set; }
         public string DescricaoQuiz { get; set; }
         public string Descricao { get; set; }
-
-
         public ICollection<QuizPergunta> QuizPergunta { get; set; }
+
     }
 }
