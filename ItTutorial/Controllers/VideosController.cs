@@ -29,8 +29,6 @@ namespace ItTutorial.Controllers
             }
             return View(videos);
         }
-
-
         // GET: Videos/Details/5
         public async Task<IActionResult> DetailsVideo(int? id)
         {
@@ -47,14 +45,14 @@ namespace ItTutorial.Controllers
             }
             var videos = _context.Videos.Where(m => m.LinguagemId == video.LinguagemId);
 
-            //var previousVideo = videos.Where(m => m.Id < video.Id).FirstOrDefault();
-            //var nextVideo = videos.Where(m => m.Id > video.Id).FirstOrDefault();
+            var previousVideo = videos.Where(m => m.Id < video.Id).FirstOrDefault();
+            var nextVideo = videos.Where(m => m.Id > video.Id).FirstOrDefault();
 
-            //List<Videos> videoList = new List<Videos>();
-            ////videoList.Add(previousVideo);
-            //videoList.Add(video);
-            //videoList.Add(nextVideo);
-            return View(video);
+            List<Videos> videoList = new List<Videos>();
+            videoList.Add(previousVideo);
+            videoList.Add(video);
+            videoList.Add(nextVideo);
+            return View(videoList);
         }
 
         private bool VideosExists(int id)

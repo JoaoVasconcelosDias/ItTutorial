@@ -38,3 +38,10 @@
 .navbar-right {
 	float: right !important;
 }
+
+
+a.actionLinkImage {
+    display: block;
+    width: 200px;
+    height: 150px;
+}

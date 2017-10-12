@@ -5,26 +5,15 @@
 }
 
 
-
-@*<ul id="menu">
-    <li>@Html.DisplayNameFor(model => model.Title)<br />
-        @Html.DisplayNameFor(model => model.Source)
-    </li>
- 
-</ul>*@
-
-
-
-
 <table class="table">
     <thead>
         <tr>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
+                </th>*@
+                @*<th>
                     @Html.DisplayNameFor(model => model.Source)
-                </th>
+                </th>*@
             <th></th>
         </tr>
     </thead>
@@ -35,7 +24,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                <iframe height="200" src="@Html.DisplayFor(modelItem => item.Source)" frameborder="0" allowfullscreen></iframe>
+                @Html.ActionLink("", "DetailsVideo", "Videos", new { id = item.Id }, new {@class="actionLinkImage", @style= "background-image:url(https://i.ytimg.com/vi/"+item.Source+"/hqdefault.jpg)" })
             </td>
         </tr>
 }
