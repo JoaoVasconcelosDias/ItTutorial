@@ -35,8 +35,6 @@ namespace ItTutorial.Controllers
                 return View(result);
 
             }
-
-
             else
             {
                 //se estivermos num post
