@@ -52,13 +52,5 @@ namespace ItTutorial.Controllers
                 return View("PostView", result);
             }
         }
-
-        //public IActionResult PostsCreate()
-        //{
-        //    ViewData["AspNetUsersId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
-        //    ViewData["SubcategoriasId"] = new SelectList(_context.Subcategorias, "Id", "Title");
-        //    return View();
-        //}
-
     }
 }
