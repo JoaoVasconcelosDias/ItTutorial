@@ -19,6 +19,11 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            var dataBaseContext = _context.Categorias.Include(c => c.Subcategorias);
+            return View(await dataBaseContext.ToListAsync());
+        }
 
         [Route("Forum/Subcategoria/{nomeSub}/{postId?}")]
         public ActionResult Subcategoria(string nomeSub, int? postId)
