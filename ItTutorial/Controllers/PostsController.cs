@@ -68,6 +68,9 @@ namespace ItTutorial.Controllers
                 var user = await _userManager.GetUserAsync(User);
                 posts.AspNetUsersId = user.Id;
 
+                //var subcat = _context.Posts;
+                //posts.SubcategoriasId = Posts.SubcategoriasId;
+
                 DateTime localdate = DateTime.Now;
                 posts.Date = localdate;
 
