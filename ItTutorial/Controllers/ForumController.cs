@@ -19,11 +19,14 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
+<<<<<<< HEAD
         public async Task<IActionResult> Index()
         {
             var dataBaseContext = _context.Categorias.Include(c => c.Subcategorias);
             return View(await dataBaseContext.ToListAsync());
         }
+=======
+>>>>>>> 6d3d695d61848d90681cb6ff5f23b98a7c2ae3bc
 
         [Route("Forum/Subcategoria/{nomeSub}/{postId?}")]
         public ActionResult Subcategoria(string nomeSub, int? postId)
@@ -40,6 +43,11 @@ namespace ItTutorial.Controllers
                 return View(result);
 
             }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6d3d695d61848d90681cb6ff5f23b98a7c2ae3bc
             else
             {
                 //se estivermos num post
