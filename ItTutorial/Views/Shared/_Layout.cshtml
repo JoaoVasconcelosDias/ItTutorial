@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <ul class="list-inline">
@@ -103,7 +104,94 @@
             </div>
         
 
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+			@*<div class="navbar-header">
+		
+	</div>*@
+			<ul class="nav navbar-nav">
+				<li class="active">
+					@Html.ActionLink("Home", "Index", "Home")
+				</li>
+				<li class="dropdown">
+					
+					<a class="dropdown-toggle" data-toggle="dropdown" id="menu1"> HTML & CSS <span class="caret"></span></a>
+
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+						<li>
+							@Html.ActionLink("Quiz", "Index", "Quiz")
+						</li>
+						<li>
+							@Html.ActionLink("Videos", "Index", "Videos")
+						</li>
+						<li>
+							@Html.ActionLink("Forum", "Index", "Forum")
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li>
+							@Html.ActionLink("Certification", "Certification", "Home")
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" id="menu1"> Javascript <span class="caret"></span></a>
+
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+						<li>
+							@Html.ActionLink("Quiz", "Index", "Quiz")
+						</li>
+						<li>
+							@Html.ActionLink("Videos", "Index", "Videos")
+						</li>
+						<li>
+							@Html.ActionLink("Forum", "Index", "Forum")
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li>
+							@Html.ActionLink("Certification", "Certification", "Home")
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" id="menu1"> C# <span class="caret"></span></a>
+
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+						<li>
+							@Html.ActionLink("Quiz", "Index", "Quiz")
+						</li>
+						<li>
+							@Html.ActionLink("Videos", "Index", "Videos")
+						</li>
+						<li>
+							@Html.ActionLink("Forum", "Index", "Forum")
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li>
+							@Html.ActionLink("Certification", "Certification", "Home")
+						</li>
+					</ul>
+				</li>
+
+
+           
+				<li>
+					<form asp-action="Index" method="get">
+						<div class="form-actions no-color">
+							<p>
+								<input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+								<input type="submit" value="Search" class="btn btn-default" />
+								<gcse:searchbox></gcse:searchbox>
+							</p>
+						</div>
+					</form>
+				</li> 
+            @await Html.PartialAsync("_LoginPartial")
+           
+		</ul>
+		</div>        
     </nav>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />

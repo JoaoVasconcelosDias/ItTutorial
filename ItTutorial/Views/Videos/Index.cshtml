@@ -1,26 +1,32 @@
 ﻿@model IEnumerable<ItTutorial.Models.Videos>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Videos";
 }
 
-<h2>Index</h2>
+
+
+@*<ul id="menu">
+    <li>@Html.DisplayNameFor(model => model.Title)<br />
+        @Html.DisplayNameFor(model => model.Source)
+    </li>
+ 
+</ul>*@
+
+
 
 
 <table class="table">
-    <>
-        <ul>
-                <li>
+    <thead>
+        <tr>
+                <th>
                     @Html.DisplayNameFor(model => model.Title)
-                </li>
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Source)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LinguagemId)
-                </th>
             <th></th>
-        </ul>
+        </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
@@ -29,10 +35,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Source)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LinguagemId)
+                <iframe height="200" src="@Html.DisplayFor(modelItem => item.Source)" frameborder="0" allowfullscreen></iframe>
             </td>
         </tr>
 }
