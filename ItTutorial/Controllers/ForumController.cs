@@ -7,6 +7,7 @@ using ItTutorial.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+
 namespace ItTutorial.Controllers
 {
     public class ForumController : Controller
@@ -18,11 +19,6 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var dataBaseContext = _context.Categorias.Include(c => c.Subcategorias);
-            return View(await dataBaseContext.ToListAsync());
-        }
 
         [Route("Forum/Subcategoria/{nomeSub}/{postId?}")]
         public ActionResult Subcategoria(string nomeSub, int? postId)
@@ -34,7 +30,7 @@ namespace ItTutorial.Controllers
                 var result = _context.Subcategorias.Include(p => p.Posts).SingleOrDefault(p => p.Title == nomeSub);
                 if(result == null)
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index"); 
                 }
                 return View(result);
 
@@ -51,6 +47,7 @@ namespace ItTutorial.Controllers
                 }
                 return View("PostView", result);
             }
+
         }
     }
 }

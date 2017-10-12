@@ -1,0 +1,63 @@
+﻿@model ItTutorial.Models.QuizPergunta
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>QuizPergunta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaExtenso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaExtenso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RespostaCerta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RespostaCerta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Descricao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PerguntaId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
