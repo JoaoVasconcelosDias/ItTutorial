@@ -232,27 +232,27 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.PerguntaExtenso)
+                entity.Property(e => e.Pergunta)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao1)
+                entity.Property(e => e.Opcao1)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao2)
+                entity.Property(e => e.Opcao2)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao3)
+                entity.Property(e => e.Opcao3)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao4)
+                entity.Property(e => e.Opcao4)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -261,7 +261,7 @@ namespace ItTutorial.Models
                     .HasColumnName("QuizID")
                     .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.RespostaCerta)
+                entity.Property(e => e.Certa)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
