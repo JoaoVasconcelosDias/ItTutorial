@@ -7,4 +7,14 @@
 
         }
  
-<input id="Button1" type="button" value="SUBMIT" />
+<input type="submit" onclick="saveState()" value="SUBMIT" />
+
+<script>
+    function saveState() {
+        var ans1 = document.getElementById('Radio1');
+        if (ans1.value == 1) {
+            ans1.setAttribute("checked", "checked");
+            ans1.checked = true;
+        } 
+    } 
+</script>

@@ -17,6 +17,7 @@ namespace ItTutorial.Controllers
         {
             _context = context;
         }
+
         
         public async Task<IActionResult>Index(int? Id)
         {
@@ -24,11 +25,13 @@ namespace ItTutorial.Controllers
             var videos = _context.Videos.Where(m => m.LinguagemId == Id);
 
             if (Id == null)
+
             {
                 return NotFound();
             }
             return View(videos);
         }
+
         // GET: Videos/Details/5
         public async Task<IActionResult> DetailsVideo(int? id)
         {
@@ -53,6 +56,7 @@ namespace ItTutorial.Controllers
             //videoList.Add(video);
             //videoList.Add(nextVideo);
             return View(video);
+
         }
 
         private bool VideosExists(int id)

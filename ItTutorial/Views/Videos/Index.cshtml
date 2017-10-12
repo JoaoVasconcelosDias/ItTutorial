@@ -3,19 +3,12 @@
 @{
     ViewData["Title"] = "Videos";
 }
-
-
-
 @*<ul id="menu">
     <li>@Html.DisplayNameFor(model => model.Title)<br />
         @Html.DisplayNameFor(model => model.Source)
     </li>
  
 </ul>*@
-
-
-
-
 <table class="table">
     <thead>
         <tr>
@@ -29,11 +22,14 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+
+	@foreach (var item in Model) {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
+
             <td>
                 <iframe height="200" src="@Html.DisplayFor(modelItem => item.Source)" frameborder="0" allowfullscreen></iframe>
             </td>
@@ -41,3 +37,4 @@
 }
     </tbody>
 </table>
+

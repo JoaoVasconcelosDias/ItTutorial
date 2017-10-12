@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -77,6 +79,7 @@ namespace ItTutorial.Controllers
         }
 
 
+
         //public void Button_Click(string btnSubmit1, string btnSubmit2, string btnSubmit3, string btnSubmit4, object sender, System.EventArgs e)
         //{
         //    if (this.btnSubmit1.Checked)
@@ -118,6 +121,7 @@ namespace ItTutorial.Controllers
             }
         }*/
     
+
 
 
 

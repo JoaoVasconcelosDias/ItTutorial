@@ -61,15 +61,21 @@ namespace ItTutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,AspNetUsersId,SubcategoriasId,Post")] Posts posts)
+        public async Task<IActionResult> Create([Bind("Id,Date,AspNetUsersId,SubcategoriasId,Post")] Posts posts, int? Id)
         {
+            if (Id == null)
+            {
+                // se nao existir subcat
+            }
+            else
+            {
+                //se existir subcat
+            }
             if (ModelState.IsValid)
             {
                 var user = await _userManager.GetUserAsync(User);
                 posts.AspNetUsersId = user.Id;
 
-                //var subcat = _context.Posts;
-                //posts.SubcategoriasId = Posts.SubcategoriasId;
 
                 DateTime localdate = DateTime.Now;
                 posts.Date = localdate;
