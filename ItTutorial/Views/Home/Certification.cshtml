@@ -1,0 +1,83 @@
+
+@{
+    ViewData["Title"] = "Certification";
+}
+<head>
+	<meta charset="utf-8" />
+	<title>Certification</title>
+	<environment names="Development">
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="~/css/site.css" />
+	</environment>
+	<environment names="Staging,Production">
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+			  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+	</environment>
+</head>
+
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-6">
+				<p>
+					<h1>Find here the greatest academies!!</h1>
+					<ol>
+						<li>
+							<h2>Dot Net </h2>
+							<ol>
+								<li>
+									<a class="btn btn-success" href="https://www.upacademy.pt/microsoft_net/">
+										UpAcademy
+									</a>
+								</li>
+
+								<li>
+									<a class="btn btn-info" href="https://www.rumos.pt/curso/programming-in-c-20483/">
+										Rumos
+									</a>
+								</li>
+								<li>
+									<a class="btn btn-primary" href="http://www.key.pt/cursos/desenvolvimento-web-visual-c">
+										Key
+									</a>
+								</li>
+							</ol>
+						</li>
+						<li>
+							<h2>Html, CSS & Javascript </h2>
+							<ol>
+								<li>
+									<a class="btn btn-success" href="https://www.galileu.pt/curso/programacao-em-html-5-com-javascript-e-css3/">
+										Galileu
+									</a>
+								</li>
+								<li>
+									<a class="btn btn-info" href="http://www.citeforma.pt/formacao/formacao-continua/cursos/audiovisuais-e-producao-dos-media/html5">
+										Citeforma
+									</a>
+								</li>
+								<li>
+									<a class="btn btn-primary" href="http://www.formabase.com/curso-html5-css3-update/">
+										Formabase
+									</a>
+								</li>
+							</ol>
+						</li>
+
+					</ol>
+
+				</p>
+			</div>
+			<div class="col-xs-6 col-md-4" style="padding:10px;">
+				<p>
+					<img src="http://2.bp.blogspot.com/-sgxd5ET5EW4/U9iHZEqEsCI/AAAAAAAAXic/FZ3yUtsj3NM/s1600/programming-languages.jpg
+" alt="Sample Photo" />
+				</p>
+			</div>
+		</div>
+	</div>
+</body>

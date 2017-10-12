@@ -1,43 +1,31 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ItTutorial.Models;
-using System.Data.SqlClient;
-using Microsoft.IdentityModel.Protocols;
-using System.Data;
-
-
-
 
 namespace ItTutorial.Controllers
 {
-    public class QuizsController : Controller
+    public class SubcategoriasController : Controller
     {
         private readonly DataBaseContext _context;
-        private string DescricaoQuiz;
-        private object btnSubmit1;
 
-        public object RespostaCerta { get; private set; }
-
-        public QuizsController(DataBaseContext context)
+        public SubcategoriasController(DataBaseContext context)
         {
             _context = context;
         }
 
-        // GET: Quizs
+        // GET: Subcategorias
         public async Task<IActionResult> Index()
         {
-            var dataBaseContext = _context.Quiz.Include(q => q.LinguagemId);
+            var dataBaseContext = _context.Subcategorias.Include(s => s.Categorias);
             return View(await dataBaseContext.ToListAsync());
         }
 
-        // GET: Quizs/Details/5
+        // GET: Subcategorias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,43 +33,42 @@ namespace ItTutorial.Controllers
                 return NotFound();
             }
 
-            var quiz = await _context.Quiz
-                .Include(q => q.LinguagemId)
-                .SingleOrDefaultAsync(m => m.QuizId == id);
-            if (quiz == null)
+            var subcategorias = await _context.Subcategorias
+                .Include(s => s.Categorias)
+                .SingleOrDefaultAsync(m => m.Id == id);
+            if (subcategorias == null)
             {
                 return NotFound();
             }
 
-            return View(quiz);
+            return View(subcategorias);
         }
 
-        // GET: Quizs/Create
+        // GET: Subcategorias/Create
         public IActionResult Create()
         {
-            ViewData["Descricao"] = new SelectList(_context.Linguagem, "Descricao", "Descricao");
+            ViewData["CategoriasId"] = new SelectList(_context.Categorias, "Id", "CategoryTitle");
             return View();
         }
 
-        // POST: Quizs/Create
+        // POST: Subcategorias/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuizId,LinguagemId")] Quiz quiz)
+        public async Task<IActionResult> Create([Bind("Id,CategoriasId,Title")] Subcategorias subcategorias)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(quiz);
+                _context.Add(subcategorias);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Descricao"] = new SelectList(_context.Linguagem, "Descricao", "Descricao", quiz.Descricao);
-            return View(quiz);
+            ViewData["CategoriasId"] = new SelectList(_context.Categorias, "Id", "CategoryTitle", subcategorias.CategoriasId);
+            return View(subcategorias);
         }
 
-
-        // GET: Quizs/Edit/5
+        // GET: Subcategorias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,23 +76,23 @@ namespace ItTutorial.Controllers
                 return NotFound();
             }
 
-            var quiz = await _context.Quiz.SingleOrDefaultAsync(m => m.QuizId == id);
-            if (quiz == null)
+            var subcategorias = await _context.Subcategorias.SingleOrDefaultAsync(m => m.Id == id);
+            if (subcategorias == null)
             {
                 return NotFound();
             }
-            ViewData["LinguagemId"] = new SelectList(_context.Linguagem, "LinguagemId", "LinguagemId", quiz.LinguagemId);
-            return View(quiz);
+            ViewData["CategoriasId"] = new SelectList(_context.Categorias, "Id", "CategoryTitle", subcategorias.CategoriasId);
+            return View(subcategorias);
         }
 
-        // POST: Quizs/Edit/5
+        // POST: Subcategorias/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("QuizId,LinguagemId")] Quiz quiz)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoriasId,Title")] Subcategorias subcategorias)
         {
-            if (id != quiz.QuizId)
+            if (id != subcategorias.Id)
             {
                 return NotFound();
             }
@@ -114,12 +101,12 @@ namespace ItTutorial.Controllers
             {
                 try
                 {
-                    _context.Update(quiz);
+                    _context.Update(subcategorias);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!QuizExists(quiz.QuizId))
+                    if (!SubcategoriasExists(subcategorias.Id))
                     {
                         return NotFound();
                     }
@@ -130,11 +117,11 @@ namespace ItTutorial.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LinguagemId"] = new SelectList(_context.Linguagem, "LinguagemId", "LinguagemId", quiz.LinguagemId);
-            return View(quiz);
+            ViewData["CategoriasId"] = new SelectList(_context.Categorias, "Id", "CategoryTitle", subcategorias.CategoriasId);
+            return View(subcategorias);
         }
 
-        // GET: Quizs/Delete/5
+        // GET: Subcategorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,31 +129,31 @@ namespace ItTutorial.Controllers
                 return NotFound();
             }
 
-            var quiz = await _context.Quiz
-                .Include(q => q.LinguagemId)
-                .SingleOrDefaultAsync(m => m.QuizId == id);
-            if (quiz == null)
+            var subcategorias = await _context.Subcategorias
+                .Include(s => s.Categorias)
+                .SingleOrDefaultAsync(m => m.Id == id);
+            if (subcategorias == null)
             {
                 return NotFound();
             }
 
-            return View(quiz);
+            return View(subcategorias);
         }
 
-        // POST: Quizs/Delete/5
+        // POST: Subcategorias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var quiz = await _context.Quiz.SingleOrDefaultAsync(m => m.QuizId == id);
-            _context.Quiz.Remove(quiz);
+            var subcategorias = await _context.Subcategorias.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Subcategorias.Remove(subcategorias);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool QuizExists(int id)
+        private bool SubcategoriasExists(int id)
         {
-            return _context.Quiz.Any(e => e.QuizId == id);
+            return _context.Subcategorias.Any(e => e.Id == id);
         }
     }
 }
