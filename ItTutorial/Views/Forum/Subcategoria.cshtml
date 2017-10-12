@@ -1,0 +1,22 @@
+﻿@model ItTutorial.Models.Subcategorias
+
+@{
+    ViewData["Title"] = "SubcategoriaIndex";
+}
+
+<h2>PostsIndex</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", "Posts")
+</p>
+
+@foreach (var post in Model.Posts)
+ {
+    <div>
+        @Html.DisplayFor(modelItem => post.Post)
+
+        @foreach (var comment in post.Comments)
+        {
+            @Html.ActionLink(comment.Comment, "Post", "Forum", new { nomeCom = comment.Comment })
+        }
+    </div>
+ }

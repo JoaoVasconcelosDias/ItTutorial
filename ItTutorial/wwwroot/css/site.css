@@ -1,16 +1,14 @@
-﻿
-body {
+﻿/*body {
     padding-top: 0px;
-    padding-bottom: 20px;
-    color: black;
+    padding-bottom: 0px;
 }
 
 /* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges*/
+/* Set some basic padding to keep content from hitting the edges 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Carousel */
 .carousel-caption p {
@@ -29,29 +27,13 @@ body {
 }
 
 /* Hide/rearrange for smaller screens 767px*/
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 300px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
     }
 
 }
-
-.navbar {
-    overflow:visible;
-    background-color: darkslategray;
-    font-family: Arial;
-    float: none;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 10px 30px 0px 30px;
-    text-decoration: none;
-    border-top-width:medium;
-    max-height:100px;
-}
-
-.tania{
-    padding-left:400px;
-
+.login{
+    padding-left:1000px;
 }
