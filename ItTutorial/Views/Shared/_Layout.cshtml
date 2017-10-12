@@ -18,92 +18,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <ul class="list-inline">
-                <div class="navbar-header">
-                    @Html.ActionLink("Home", "Index", "Home")
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                            HTML & CSS
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li>
-                                @Html.ActionLink("Quiz", "Index", "Quiz")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Videos", "Index", "Videos/Index/1")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Forum", "Index", "Forum")
-                            </li>
-                            <li role="presentation" class="divider"></li>
-                                <li>
-                                @Html.ActionLink("Certification", "Certification", "Home")
-                                </li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                            Javascript
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li>
-                                @Html.ActionLink("Quiz", "Index", "Quiz")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Videos", "Index", "Videos/Index/2")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Forum", "Index", "Forum")
-                            </li>
-                            <li role="presentation" class="divider"></li>
-                            <li>
-                                @Html.ActionLink("Certification", "Certification", "Home")
-                            </li>
-                        </ul>
-                    </div> 
-
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                            C#
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li>
-                                @Html.ActionLink("Quiz", "Index", "Quiz")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Videos", "Index", "Videos/Index/3")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Forum", "Index", "Forum")
-                            </li>
-                            <li role="presentation" class="divider"></li>
-                            <li>
-                                @Html.ActionLink("Certification", "Certification", "Home")
-                            </li>
-                        </ul>
-                    </div>  
-                </div>
-            </ul>
-            <form asp-action="Index" method="get">
-                <div class="form-actions no-color">
-                    <p>
-                        <input type="text" name="SearchString" value="@ViewData["currentFilter"]"/>
-                        <input type="submit" value="Search" class="btn btn-default"/>
-                        <gcse:searchbox></gcse:searchbox>
-                    </p>
-                </div>
-            </form>
-            @await Html.PartialAsync("_LoginPartial")
-            </div>
-        
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
 			@*<div class="navbar-header">
@@ -163,6 +77,9 @@
 							@Html.ActionLink("Videos", "Index", "Videos")
 						</li>
 						<li>
+							@Html.ActionLink("Consola", "Consola", "Home")
+						</li>
+						<li>
 							@Html.ActionLink("Forum", "Index", "Forum")
 						</li>
 						<li role="presentation" class="divider"></li>
@@ -170,21 +87,21 @@
 							@Html.ActionLink("Certification", "Certification", "Home")
 						</li>
 					</ul>
-				</li>
-
-
-           
+				</li>				     				
 				<li>
-					<form asp-action="Index" method="get">
-						<div class="form-actions no-color">
-							<p>
-								<input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-								<input type="submit" value="Search" class="btn btn-default" />
-								<gcse:searchbox></gcse:searchbox>
-							</p>
-						</div>
+					<form method="get" action="http://www.google.com/search" class="nav navbar-nav navbar-right">
+						<input type="text" name="q" size="20" maxlength="150" value="" />
+						<button type="submit" value="Search" class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span> Search
+						</button>
+						<br /> <input type="radio" name="sitesearch" value="" />
+						Search on Web
+						<input type="radio" name="sitesearch" value="c-sharpcorner.com" checked />
+	Search from c-sharpcorner<br />
+	@*<input type="radio" name="sitesearch" value="msdn.microsoft.com" checked />
+	search on MSDN*@
 					</form>
-				</li> 
+				</li>
             @await Html.PartialAsync("_LoginPartial")
            
 		</ul>

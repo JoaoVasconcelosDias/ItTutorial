@@ -9,5 +9,6 @@ namespace ItTutorial.Models
         public string Title { get; set; }
         public string Source { get; set; }
         public int LinguagemId { get; set; }
+        public string Notes { get; set; }
     }
 }

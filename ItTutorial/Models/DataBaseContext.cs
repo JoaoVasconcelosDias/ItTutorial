@@ -21,6 +21,7 @@ namespace ItTutorial.Models
         public virtual DbSet<QuizPergunta> QuizPergunta { get; set; }
         public virtual DbSet<Resultados> Resultados { get; set; }
         public virtual DbSet<Subcategorias> Subcategorias { get; set; }
+        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Videos> Videos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -300,15 +301,25 @@ namespace ItTutorial.Models
                     .HasConstraintName("FK_Subcategorias_Categorias");
             });
 
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Apontamentos).HasColumnType("nchar(10)");
+            });
+
             modelBuilder.Entity<Videos>(entity =>
             {
                 entity.Property(e => e.Source)
-                    .HasMaxLength(90)
+                    .IsRequired()
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
-                    .HasMaxLength(80)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
         }
