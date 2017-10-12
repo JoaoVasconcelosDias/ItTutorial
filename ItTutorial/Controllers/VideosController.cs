@@ -29,8 +29,6 @@ namespace ItTutorial.Controllers
             }
             return View(videos);
         }
-
-
         // GET: Videos/Details/5
         public async Task<IActionResult> DetailsVideo(int? id)
         {
