@@ -1,0 +1,60 @@
+﻿@model ItTutorial.Models.QuizPergunta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuizPergunta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaExtenso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaExtenso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PerguntaOpcao4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PerguntaOpcao4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RespostaCerta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RespostaCerta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Descricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PerguntaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
