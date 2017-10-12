@@ -6,7 +6,6 @@ namespace ItTutorial.Models
 {
     public partial class DataBaseContext : DbContext
     {
-        public virtual DbSet<Anotacoes> Anotacoes { get; set; }
         public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
@@ -36,25 +35,6 @@ namespace ItTutorial.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Anotacoes>(entity =>
-            {
-                entity.HasKey(e => e.Iduser);
-
-                entity.Property(e => e.Iduser)
-                    .HasColumnName("IDuser")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Notas)
-                    .HasMaxLength(5000)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.IduserNavigation)
-                    .WithOne(p => p.Anotacoes)
-                    .HasForeignKey<Anotacoes>(d => d.Iduser)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Anotacoes_User");
-            });
-
             modelBuilder.Entity<AspNetRoleClaims>(entity =>
             {
                 entity.HasIndex(e => e.RoleId);
@@ -332,8 +312,6 @@ namespace ItTutorial.Models
 
             modelBuilder.Entity<Videos>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Source)
                     .IsRequired()
                     .HasMaxLength(50)

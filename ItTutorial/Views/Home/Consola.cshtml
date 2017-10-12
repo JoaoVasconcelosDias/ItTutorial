@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewData["Title"] = "Consola";
+}
+
+<head>
+	<meta charset="utf-8" />
+	<title>Consola</title>
+	<environment names="Development">
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="~/css/site.css" />
+	</environment>
+	<environment names="Staging,Production">
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+			  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+	</environment>
+	@*<script type="text/javascript" language="javascript" src="/Scripts/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript">
+
+			function makevisible() {
+				$('#MyHiddenTextBox').show();
+		}
+	</script>*@
+
+	
+
+</head>
+<body>
+	
+
+	<h1> Practice here</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-6">
+				
+
+
+				Write your code here and press "Execute" button to compile and execute IT! :
+				<div class="CompileMethod">
+
+						@using (Html.BeginForm())
+						{
+							<form>
+
+
+								 <textarea name="FirstCompile" value="" style="height:300px;width:450px; max-width:none;">			  	
+            using System;
+            public class MyClass
+            {
+                public String Result {get;set;}
+                public MyClass()
+                {
+                    Result = "Aleluia Roslyn!";
+                }
+            }	  	
+
+</textarea><br>
+								<br>
+								<input type="submit" value="Execute" class="btn btn-info"> 
+
+								<span class="glyphicons glyphicons-ok-sign"></span>
+								<input type="reset" value="Clear" class="btn btn-danger">
+								<br>
+								<br>
+								<!-- Model: valor que o controlador passa a view, model: o tipo de dados  -->
+								Result:
+								@Model
+
+							</form>
+						}
+					</div>
+					</div>
+			<div class="col-xs-6 col-md-2" style="padding:10px;">
+				<p>
+
+					@*Your textbox:
+								using System;
+								public class MyClass
+								{
+								public String Result {get;set;}
+								public MyClass()
+								{
+								Result = "Aleluia Roslyn!";
+								}
+								}
+
+								<br />
+			<input type="text" id="MyHiddenTextBox" style="display:none;" /><br />
+
+				<br />
+			<button class="btn btn-success" onclick="makevisible();"> See Solution </button>
+
+							</p>*@
+
+					<button class="btn btn-success" onclick="myFunction()"> See Solution </button>
+
+				<p id="demo"></p>
+
+
+
+
+			</div>
+
+			</div>
+		</div>
+
+</body>
+
+@*
+
+	<script type="text/javascript" language="javascript" src="/Scripts/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript">
+
+		function myFunction() {
+			document.getElementById("demo").innerHTML = `
+				using System;
+				public class MyClass {
+					public String Result {get; set; }
+					public MyClass()
+				{
+					Result = "Aleluia Roslyn!";
+				}
+			}	";`
+		}
+	</script>*@
+

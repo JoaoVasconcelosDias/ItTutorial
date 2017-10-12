@@ -265,14 +265,7 @@ namespace ItTutorial.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    if (!await _roleManager.RoleExistsAsync("User"))
-                    {
-                        var role = new IdentityRole("User");
-                        var res = await _roleManager.CreateAsync(role);
-
-                        if (res.Succeeded)
-                        {
-                            await _userManager.AddToRoleAsync(user, "User");
+                    await _userManager.AddToRoleAsync(user, "User");
 
                             _logger.LogInformation("User created a new account with password.");
 
@@ -281,13 +274,11 @@ namespace ItTutorial.Controllers
                             await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
                             await _signInManager.SignInAsync(user, isPersistent: false);
-                            _logger.LogInformation("User created a new account with password.");
-
-                        }
-
-                    }
+                            _logger.LogInformation("User created a new account with password.");                 
 
                     return RedirectToLocal(returnUrl);
+
+
                 }
                 AddErrors(result);
             }
