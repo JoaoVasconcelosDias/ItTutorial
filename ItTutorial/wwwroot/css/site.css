@@ -34,8 +34,42 @@
     }
 
 }
-a.actionLinkImage {
-    display: block;
-    width: 200px;
-    height: 150px;
+.login{
+    padding-left:1000px;
+}
+
+.buttonL {
+    background-color: white;
+    border: none;
+    color: gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 125px;
+    position: absolute;
+    top: 50%;
+    margin-left:43%;
+}
+
+.buttonR {
+    background-color: white;
+    border: none;
+    color: gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 125px;
+    position: absolute;
+    top: 50%;
+    margin-left: 50%;
+}
+
+.landing {
+    position: absolute;
+    top: 30%;
+    margin-left: 25%;
 }
