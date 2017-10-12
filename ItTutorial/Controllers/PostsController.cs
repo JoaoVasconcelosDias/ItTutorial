@@ -68,6 +68,7 @@ namespace ItTutorial.Controllers
                 var user = await _userManager.GetUserAsync(User);
                 posts.AspNetUsersId = user.Id;
 
+
                 DateTime localdate = DateTime.Now;
                 posts.Date = localdate;
 
