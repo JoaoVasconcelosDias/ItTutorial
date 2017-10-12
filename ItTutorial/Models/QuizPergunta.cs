@@ -18,6 +18,7 @@ namespace ItTutorial.Models
         public string PerguntaOpcao3 { get; set; }
         public string PerguntaOpcao4 { get; set; }
         public string RespostaCerta { get; set; }
+        public string RespostaUser { get; set; }
 
         public Quiz Quiz { get; set; }
         public ICollection<Resultados> Resultados { get; set; }
