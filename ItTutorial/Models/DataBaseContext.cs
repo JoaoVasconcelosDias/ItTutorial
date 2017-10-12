@@ -6,7 +6,6 @@ namespace ItTutorial.Models
 {
     public partial class DataBaseContext : DbContext
     {
-        public virtual DbSet<Anotacoes> Anotacoes { get; set; }
         public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
@@ -22,7 +21,6 @@ namespace ItTutorial.Models
         public virtual DbSet<QuizPergunta> QuizPergunta { get; set; }
         public virtual DbSet<Resultados> Resultados { get; set; }
         public virtual DbSet<Subcategorias> Subcategorias { get; set; }
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Videos> Videos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -36,25 +34,6 @@ namespace ItTutorial.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Anotacoes>(entity =>
-            {
-                entity.HasKey(e => e.Iduser);
-
-                entity.Property(e => e.Iduser)
-                    .HasColumnName("IDuser")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Notas)
-                    .HasMaxLength(5000)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.IduserNavigation)
-                    .WithOne(p => p.Anotacoes)
-                    .HasForeignKey<Anotacoes>(d => d.Iduser)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Anotacoes_User");
-            });
-
             modelBuilder.Entity<AspNetRoleClaims>(entity =>
             {
                 entity.HasIndex(e => e.RoleId);
@@ -253,27 +232,27 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.PerguntaExtenso)
+                entity.Property(e => e.Pergunta)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao1)
+                entity.Property(e => e.Opcao1)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao2)
+                entity.Property(e => e.Opcao2)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao3)
+                entity.Property(e => e.Opcao3)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PerguntaOpcao4)
+                entity.Property(e => e.Opcao4)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -282,7 +261,7 @@ namespace ItTutorial.Models
                     .HasColumnName("QuizID")
                     .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.RespostaCerta)
+                entity.Property(e => e.Certa)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -321,27 +300,15 @@ namespace ItTutorial.Models
                     .HasConstraintName("FK_Subcategorias_Categorias");
             });
 
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Apontamentos).HasColumnType("nchar(10)");
-            });
-
             modelBuilder.Entity<Videos>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Source)
-                    .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(90)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(80)
                     .IsUnicode(false);
             });
         }
