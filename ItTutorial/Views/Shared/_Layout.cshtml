@@ -18,12 +18,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
 			<ul class="nav navbar-nav">
 				<li class="active">
-					@Html.ActionLink("Home", "Index", "Home")
+					@Html.ActionLink("Home", "Index", "Manage")
 				</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
 				<li class="dropdown">
 					
 					<a class="dropdown-toggle" data-toggle="dropdown" id="menu1"> HTML & CSS <span class="caret"></span></a>
@@ -50,6 +51,7 @@
 					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 						<li>
 							@Html.ActionLink("Quiz", "Index", "QuizPerguntas")
+
 						</li>
 						<li>
 							@Html.ActionLink("Videos", "Index", "Videos/Index/2")
@@ -84,7 +86,8 @@
 							@Html.ActionLink("Certification", "Certification", "Home")
 						</li>
 					</ul>
-				</li>				     				
+				</li>
+               @await Html.PartialAsync("_LoginPartial")
 				<li>
 					<form method="get" action="http://www.google.com/search" class="tania nav navbar-nav">
 						<input type="text" name="q" size="20" maxlength="150" value="" />
@@ -99,7 +102,7 @@
 	search on MSDN*@
 					</form>
 				</li>
-            @await Html.PartialAsync("_LoginPartial")
+            
            
 		</ul>
 		</div>        
@@ -109,14 +112,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-                <p>&copy; @DateTime.Now.Year - ItTutorial</p>
-            </div>
-        </footer>
+      
     </div>
 
     <environment names="Development">

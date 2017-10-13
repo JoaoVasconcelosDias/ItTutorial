@@ -37,6 +37,7 @@ namespace ItTutorial.Controllers
                 {
                     return RedirectToAction("Index"); 
                 }
+                ViewData["SubCategoria"] = result;
                 return View(result);
 
             }

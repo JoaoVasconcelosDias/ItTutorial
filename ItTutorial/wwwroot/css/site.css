@@ -1,7 +1,6 @@
 ﻿/*body {
     padding-top: 0px;
     padding-bottom: 0px;
-    background-color: grey;:
 }
 
 /* Wrapping element */
@@ -35,11 +34,17 @@
     }
 
 }
+a.actionLinkImage {
+    display: block;
+    width: 200px;
+    height: 150px;
+}
+
 .login{
     padding-left:1000px;
 }
 
-.buttonL {
+.loginButton {
     background-color: white;
     border: none;
     color: gray;
@@ -49,28 +54,47 @@
     display: inline-block;
     font-size: 16px;
     width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left:43%;
-}
 
-.buttonR {
-    background-color: white;
-    border: none;
-    color: gray;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left: 50%;
 }
-
-.landing {
+/*.landing {
     position: absolute;
-    top: 30%;
+    top: 15%;
     margin-left: 25%;
+
+}*/
+.landing {
+    color: black;
+    /*margin-top: 5px;*/
+    margin-left: 5%;
+    padding-top: 10px;
+    font-family: Tahoma;
+}
+
+
+.join {
+    font-style: italic;
+}
+
+.tania{
+    padding-left: 400px;
+
+}
+
+.forum {
+    font-size:larger;
+}
+
+body {
+    background-image: url("/images/fundo1.jpg");
+    background-position: center;
+}
+
+
+.loginService {
+    display: block;
+    position: absolute;
+    margin-left: 15%;
+    top: 55%;
+    padding: 15px 32px;
+    width: 125px;
 }
