@@ -1,16 +1,12 @@
 ﻿@model ItTutorial.Models.QuizPergunta
-
 @using (Html.BeginForm())
 {
     <head runat="server">
-
     </head>
 
     <body>
-
-        <form id="form1" runat="server">
-
-            <div>
+   <div>
+            
                 <table class="table">
                     <thead>
                         <tr>
@@ -33,33 +29,37 @@
                                 <div class="container">
                                     <h2 style="color:#27b61c;">
                                         @Html.DisplayNameFor(model => model.Pergunta)
-                                    </h2>  
+                                    </h2>
                                 </div>
                             </th>
-                            <th><h3 style="color:#327ad3;">
-                                @Html.DisplayNameFor(model => model.Opcao1) <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: -20px;" />
-                            </h3>
+                            <th>
+                                <h3 style="color:#327ad3;">
+                                    @Html.DisplayNameFor(model => model.Opcao1) <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: -20px;" />
+                                </h3>
                             </th>
-                            <th><h3 style="color:#327ad3;">
-                                @Html.DisplayNameFor(model => model.Opcao2) <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: -20px;" />
-                            </h3>
+                            <th>
+                                <h3 style="color:#327ad3;">
+                                    @Html.DisplayNameFor(model => model.Opcao2) <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: -20px;" />
+                                </h3>
                             </th>
-                            <th><h3 style="color:#327ad3;">
-                                @Html.DisplayNameFor(model => model.Opcao3) <input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: -20px;" />
-                            </h3>
-                            </th> 
-                            <th><h3 style="color:#327ad3;">
-                                @Html.DisplayNameFor(model => model.Opcao4) <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: -20px;" />
-                            </h3>
+                            <th>
+                                <h3 style="color:#327ad3;">
+                                    @Html.DisplayNameFor(model => model.Opcao3) <input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: -20px;" />
+                                </h3>
+                            </th>
+                            <th>
+                                <h3 style="color:#327ad3;">
+                                    @Html.DisplayNameFor(model => model.Opcao4) <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: -20px;" />
+                                </h3>
                             </th>
                         </tr>
                     </thead>
-                    <tbody>                       
+                    <tbody>
                         <tr>
                             <td>
-                                
-                                  @Html.DisplayFor(modelItem => Model.Pergunta)
-                                        
+
+                                @Html.DisplayFor(modelItem => Model.Pergunta)
+
                             </td>
                             <td>
                                 <fieldset>
@@ -74,7 +74,7 @@
                                 <fieldset>
                                     <ul class="sp-list">
                                         <li class="sp-item">
-                                            @Html.DisplayFor(modelItem => Model.Opcao2) 
+                                            @Html.DisplayFor(modelItem => Model.Opcao2)
                                     </ul>
                                 </fieldset>
                             </td>
@@ -95,10 +95,12 @@
                                 </fieldset>
                             </td>
                         </tr>
-   
+
                     </tbody>
                 </table>
             </div>
-        </form>
-    </body>
-}
+           
+     
+            
+      
+    </body> }
