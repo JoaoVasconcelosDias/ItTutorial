@@ -15,7 +15,6 @@ namespace ItTutorial.Models
         public string DescricaoQuiz { get; set; }
         public string Descricao { get; set; }
 
-
         public ICollection<QuizPergunta> QuizPergunta { get; set; }
     }
 }

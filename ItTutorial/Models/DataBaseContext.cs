@@ -232,19 +232,19 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.PerguntaExtenso).HasColumnType("text");
+                entity.Property(e => e.Certa).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao1).HasColumnType("text");
+                entity.Property(e => e.Opcao1).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao2).HasColumnType("text");
+                entity.Property(e => e.Opcao2).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao3).HasColumnType("text");
+                entity.Property(e => e.Opcao3).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao4).HasColumnType("text");
+                entity.Property(e => e.Opcao4).HasColumnType("text");
+
+                entity.Property(e => e.Pergunta).HasColumnType("text");
 
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
-
-                entity.Property(e => e.RespostaCerta).HasColumnType("text");
 
                 entity.Property(e => e.RespostaUser).HasColumnType("text");
 
