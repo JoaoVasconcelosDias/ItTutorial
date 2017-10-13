@@ -17,11 +17,13 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+<body>
     <div class="container body-content">
         @RenderBody()
- 
- 
+
+
     </div>
+
 
     <div class="landing">
         <h1>ItTutorial</h1>
@@ -45,10 +47,10 @@
             else
             {
                 <form style="display: inline-block " asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
-                            @foreach (var provider in loginProviders)
-                            {
-                               <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
-                            }
+                    @foreach (var provider in loginProviders)
+                    {
+                        <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                    }
                 </form>
             }
         }
@@ -75,9 +77,10 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-  
+
     @RenderSection("Scripts", required: false)
-    
-    
+
+
 </body>
+
 </html>
