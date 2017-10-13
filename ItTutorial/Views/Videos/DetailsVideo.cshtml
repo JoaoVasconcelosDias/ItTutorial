@@ -1,68 +1,60 @@
 ﻿@model List<ItTutorial.Models.Videos>
-
 @{
     ViewData["Title"] = "Videos";
 }
 
-    <h1>
-        @*@Html.DisplayFor(modelItem => Model.Title)*@
-    </h1>
 
+<div class="col-sm-6">
     <iframe width="560"
             height="315"
             src="https://www.youtube.com/embed/@(Model[1].Source)"
             frameborder="0"
             allowfullscreen></iframe>
+    <br />
+
+        <p>
+            Practice on the @Html.ActionLink("Console", "Console", "Home")
+        </p>    
+  
+ 
+      
+</div>
 
 
-@using (Html.BeginForm("CommentBox", "Home", FormMethod.Post))
-{
 
+<div class="col-sm-6">
+
+    @using (Html.BeginForm("CommentBox", "Home", FormMethod.Post))
+    {
+
+        <div>
+            <textarea class="tiny"></textarea>
+            @*<input type="submit" value="Create" />*@
+            <label>To Save it: click on File and Print it!</label>
+        </div>
+    }
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=psxifofnwsch3ajd65wcg0t441yqk14zy6wqwv9a40z34bws"></script>
+    <script>
+
+        tinymce.init({
+            selector: 'textarea.tiny',
+            height: 315,
+            width: 560,
+            hidden_input: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code'
+            ],
+
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            content_css: [
+                '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+                '//www.tinymce.com/css/codepen.min.css'
+            ]
+        });
+
+    </script>
     <div>
-        <textarea class="tiny"></textarea>
-        @*<input type="submit" value="Create" />*@
-        <label>To Save it: click on File and Print it!</label>
-
     </div>
-}
-
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=psxifofnwsch3ajd65wcg0t441yqk14zy6wqwv9a40z34bws"></script>
-
-<script>
-
-    tinymce.init({
-        selector: 'textarea.tiny',
-        height: 215,
-        width: 560,
-        hidden_input: false,
-        plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table contextmenu paste code'
-        ],
-
-        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        content_css: [
-            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-            '//www.tinymce.com/css/codepen.min.css'
-        ]
-    });
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>

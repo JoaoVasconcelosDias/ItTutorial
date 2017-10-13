@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Videos";
 }
-
 <table class="table">
     <thead>
         <tr>
@@ -22,7 +21,9 @@
 
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                <strong>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </strong>
             </td>
 
             <td>
@@ -32,4 +33,6 @@
 }
     </tbody>
 </table>
+
+
 

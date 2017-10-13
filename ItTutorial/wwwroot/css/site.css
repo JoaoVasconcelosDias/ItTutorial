@@ -39,3 +39,70 @@ a.actionLinkImage {
     width: 200px;
     height: 150px;
 }
+
+.login{
+    padding-left:1000px;
+}
+
+.buttonL {
+    background-color: white;
+    border: none;
+    color: gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 125px;
+    position: absolute;
+    top: 50%;
+    margin-left:40%;
+}
+
+.buttonR {
+    background-color: white;
+    border: none;
+    color: gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 125px;
+    position: absolute;
+    top: 50%;
+    margin-left: 50%;
+}
+
+.landing {
+    position: absolute;
+    top: 15%;
+    margin-left: 25%;
+
+}
+
+.landing h1{
+    color: white;
+}
+
+ .landing h2 {
+        color: white;
+    }
+
+.landing h3 {
+        color: white;
+    }
+
+.tania{
+    padding-left: 400px;
+
+}
+
+.forum {
+    font-size:larger;
+}
+
+.textarea{
+    align-content:flex-end
+}
+
