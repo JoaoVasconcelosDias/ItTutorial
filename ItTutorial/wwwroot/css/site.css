@@ -34,6 +34,12 @@
     }
 
 }
+a.actionLinkImage {
+    display: block;
+    width: 200px;
+    height: 150px;
+}
+
 .login{
     padding-left:1000px;
 }
@@ -72,4 +78,9 @@
     position: absolute;
     top: 30%;
     margin-left: 25%;
+}
+
+.tania{
+    padding-left: 400px;
+
 }
