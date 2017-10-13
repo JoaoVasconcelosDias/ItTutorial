@@ -18,167 +18,45 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
-        //02.10.2017
-        // GET: Videos
-        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
+        
+        public async Task<IActionResult>Index(int? Id)
         {
-            ViewData["CurrentSort"] = sortOrder;
-            //return View(await _context.Videos.ToListAsync());
-            if (searchString !=null)
+            
+            var videos = _context.Videos.Where(m => m.LinguagemId == Id);
+
+            if (Id == null)
+
             {
-                page = 1;
+                return NotFound();
             }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewData["CurrentFilter"] = searchString;
-
-            var videos = from s in _context.Videos
-                        select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                videos = videos.Where(s => s.Title.Contains(searchString)
-                                    || s.Source.Contains(searchString));
-            }
-
-            switch (sortOrder)
-            {
-                case "LinguagemId":
-                    videos = videos.OrderByDescending(s => s.Title);
-                    break;
-
-                case "Source":
-                    videos = videos.OrderBy(s => s.LinguagemId);
-                    break;
-                default:
-                    videos = videos.OrderBy(s => s.Title);
-                    break;            
-            }
-
-            int pageSize = 3; //change the size of this page, in case there are more than 3 videos
-            return View(await PaginatedList<Videos>.CreateAsync(videos.AsNoTracking(), page ?? 1, pageSize));
+            return View(videos);
         }
 
         // GET: Videos/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> DetailsVideo(int? id)
         {
             if (id == null)
             {
-                return NotFound();
+                //return NotFound();
             }
 
-            var videos = await _context.Videos
+            var video = await _context.Videos
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (videos == null)
+            if (video == null)
             {
-                return NotFound();
+                //return NotFound();
             }
+            var videos = _context.Videos.Where(m => m.LinguagemId == video.LinguagemId);
 
-            return View(videos);
-        }
+            var previousVideo = videos.Where(m => m.Id < video.Id).FirstOrDefault();
+            var nextVideo = videos.Where(m => m.Id > video.Id).FirstOrDefault();
+            
+            List<Videos> videoList = new List<Videos>();
+            videoList.Add(previousVideo);
+            videoList.Add(video);
+            videoList.Add(nextVideo);
+            return View(videoList);
 
-        // GET: Videos/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Videos/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Source,LinguagemId,Notes")] Videos videos)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(videos);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(videos);
-}
-
-        // GET: Videos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var videos = await _context.Videos.SingleOrDefaultAsync(m => m.Id == id);
-            if (videos == null)
-            {
-                return NotFound();
-            }
-            return View(videos);
-        }
-
-        // POST: Videos/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Source,LinguagemId,Notes")] Videos videos)
-        {
-            if (id != videos.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(videos);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!VideosExists(videos.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(videos);
-        }
-
-        // GET: Videos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var videos = await _context.Videos
-                .SingleOrDefaultAsync(m => m.Id == id);
-            if (videos == null)
-            {
-                return NotFound();
-            }
-
-            return View(videos);
-        }
-
-        // POST: Videos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var videos = await _context.Videos.SingleOrDefaultAsync(m => m.Id == id);
-            _context.Videos.Remove(videos);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool VideosExists(int id)
@@ -186,10 +64,6 @@ namespace ItTutorial.Controllers
             return _context.Videos.Any(e => e.Id == id);
         }
 
-
-
-        
     }
-
     
 }

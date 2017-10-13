@@ -16,13 +16,7 @@
 			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
 		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 	</environment>
-	@*<script type="text/javascript" language="javascript" src="/Scripts/jquery.min.js"></script>
-	<script type="text/javascript" language="javascript">
-
-			function makevisible() {
-				$('#MyHiddenTextBox').show();
-		}
-	</script>*@
+	
 
 	
 
@@ -50,10 +44,8 @@
             public class MyClass
             {
                 public String Result {get;set;}
-                public MyClass()
-                {
-                    Result = "Aleluia Roslyn!";
-                }
+                
+
             }	  	
 
 </textarea><br>
@@ -71,30 +63,24 @@
 							</form>
 						}
 					</div>
+
+				
+
+
+
 					</div>
+			<button type="button" style="background-color: greenyellow  ;margin-left:auto;margin-right:auto;display:block;
+		font-size : 20px;">
+	Continue to see more
+	@Html.ActionLink("Videos", "Index", "Videos/Index/3") !
+</button>
 			<div class="col-xs-6 col-md-2" style="padding:10px;">
 				<p>
 
-					@*Your textbox:
-								using System;
-								public class MyClass
-								{
-								public String Result {get;set;}
-								public MyClass()
-								{
-								Result = "Aleluia Roslyn!";
-								}
-								}
+					
 
-								<br />
-			<input type="text" id="MyHiddenTextBox" style="display:none;" /><br />
 
-				<br />
-			<button class="btn btn-success" onclick="makevisible();"> See Solution </button>
-
-							</p>*@
-
-					<button class="btn btn-success" onclick="myFunction()"> See Solution </button>
+					<button class="btn btn-success" onclick="myFunction()"> See an example </button>
 
 				<p id="demo"></p>
 
@@ -108,21 +94,5 @@
 
 </body>
 
-@*
 
-	<script type="text/javascript" language="javascript" src="/Scripts/jquery.min.js"></script>
-	<script type="text/javascript" language="javascript">
-
-		function myFunction() {
-			document.getElementById("demo").innerHTML = `
-				using System;
-				public class MyClass {
-					public String Result {get; set; }
-					public MyClass()
-				{
-					Result = "Aleluia Roslyn!";
-				}
-			}	";`
-		}
-	</script>*@
 

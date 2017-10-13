@@ -1,58 +1,46 @@
 ﻿@model ItTutorial.Models.QuizPergunta
-   
+
 @using (Html.BeginForm())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PerguntaExtenso)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PerguntaOpcao1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PerguntaOpcao2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PerguntaOpcao3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PerguntaOpcao4)
-                </th>
+    <head runat="server">
 
-            </tr>
-        </thead>
-        <tbody>
+    </head>
+
+   <body>
+   <div>
+      
+	   	   <ul>
+				  <br />
+		 	<h3>
+		 		<strong>
+		 			@Html.DisplayNameFor(model => model.Question) :
+		 		@Html.DisplayFor(modelItem => Model.Question)
+		 </strong>
+		 </h3>
+		 		<li>
+					 @Html.DisplayNameFor(model => model.Option1) :
+			   		 @Html.DisplayFor(modelItem => Model.Option1)
+					 <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: 25px;" />
+				</li>
+		 		<li>
+			   		@Html.DisplayNameFor(model => model.Option2)  :
+					@Html.DisplayFor(modelItem => Model.Option2) 
+					 <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: 25px;" />
+		 		</li>
+				  <li>
+		  	@Html.DisplayNameFor(model => model.Option3)  :
+		  	@Html.DisplayFor(modelItem => Model.Option3)
+			<input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: 25px;" />
+				  </li>
+		 	<li>
+		 		@Html.DisplayNameFor(model => model.Option4)	:
+		   	@Html.DisplayFor(modelItem => Model.Option4)
+				 <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: 25px;" />
+	      </li>
+
+	   </ul>
+	      	   	   
+            </div>
            
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.PerguntaExtenso)
-                    </td>
-                    <td>
-                        <input id="Radio1" type="radio" name="recebeOpcao" value="a" runat="server" checked="checked" onclick="GetHTMLRadioButtonSelectedValue()"/>
-                        <!--runat="server" attribute for your html radio button it will be accessible on the code behind.-->
-                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao1)
-                    </td>
-                    <td>
-                        <input id="Radio2" type="radio" name="recebeOpcao" value="b"/>
-                        <asp:Button ID="Button2" runat="server" Text="Button" onclick="Button2_Click" />
-                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao2)
-                    </td>
-                    <td>
-                        <input id="Radio3" type="radio" name="recebeOpcao" value="c"/>
-                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao3)
-                    </td>
-                    <td>
-                        <input id="Radio4" type="radio" name="recebeOpcao" value="d"/>
-                        @Html.DisplayFor(modelItem => Model.PerguntaOpcao4)
-                    </td>
-
-                </tr>
-
-            
-        </tbody>
-
-    </table>
-
+    </body>
 }

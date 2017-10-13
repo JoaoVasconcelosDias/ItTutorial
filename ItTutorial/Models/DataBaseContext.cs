@@ -21,7 +21,6 @@ namespace ItTutorial.Models
         public virtual DbSet<QuizPergunta> QuizPergunta { get; set; }
         public virtual DbSet<Resultados> Resultados { get; set; }
         public virtual DbSet<Subcategorias> Subcategorias { get; set; }
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Videos> Videos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -233,39 +232,21 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.PerguntaExtenso)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Certa).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao1)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Option1).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao2)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Option2).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao3)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Option3).HasColumnType("text");
 
-                entity.Property(e => e.PerguntaOpcao4)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Option4).HasColumnType("text");
 
-                entity.Property(e => e.QuizId)
-                    .HasColumnName("QuizID")
-                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.Question).HasColumnType("text");
 
-                entity.Property(e => e.RespostaCerta)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.QuizId).HasColumnName("QuizID");
+
+                entity.Property(e => e.RespostaUser).HasColumnType("text");
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizPergunta)
@@ -301,25 +282,15 @@ namespace ItTutorial.Models
                     .HasConstraintName("FK_Subcategorias_Categorias");
             });
 
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Apontamentos).HasColumnType("nchar(10)");
-            });
-
             modelBuilder.Entity<Videos>(entity =>
             {
                 entity.Property(e => e.Source)
-                    .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(90)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(80)
                     .IsUnicode(false);
             });
         }

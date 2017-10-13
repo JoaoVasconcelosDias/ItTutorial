@@ -61,6 +61,8 @@ namespace ItTutorial.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+            if (returnUrl == null)
+                returnUrl = "/Manage/Index";
             ViewData["ReturnUrl"] = returnUrl;
             if (model.Email.IndexOf('@') > -1)
             {
@@ -258,6 +260,8 @@ namespace ItTutorial.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
+            if (returnUrl == null)
+                returnUrl = "/Manage/Index";
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {

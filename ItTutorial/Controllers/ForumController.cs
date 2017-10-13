@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ItTutorial.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace ItTutorial.Controllers
 {
@@ -17,16 +19,39 @@ namespace ItTutorial.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int id, [Bind("Id,Title")] Subcategorias subcategorias)
+        public async Task<IActionResult> Index()
         {
             var dataBaseContext = _context.Categorias.Include(c => c.Subcategorias);
             return View(await dataBaseContext.ToListAsync());
         }
 
-        public async Task<IActionResult> PostsIndex()
+        [Route("Forum/Subcategoria/{nomeSub}/{postId?}")]
+        public ActionResult Subcategoria(string nomeSub, int? postId)
         {
-            var dataBaseContext = _context.Subcategorias.Include(c => c.Posts);
-            return View(await dataBaseContext.ToListAsync());
+            if( postId == null)
+            {
+                //se estivermos na subcategoria
+                
+                var result = _context.Subcategorias.Include(p => p.Posts).SingleOrDefault(p => p.Title == nomeSub);
+                if(result == null)
+                {
+                    return RedirectToAction("Index"); 
+                }
+                ViewData["SubCategoria"] = result;
+                return View(result);
+
+            }
+            else
+            {
+                //se estivermos num post
+                var result = _context.Posts.Include(p => p.Comments).SingleOrDefault(p => p.Id == postId);
+                if (result == null)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View("PostView", result);
+            }
+
         }
     }
 }

@@ -7,17 +7,18 @@
 <h2>Forum</h2>
 
 @foreach (var cat in Model)
+
 {
-    <div style="background:black;margin:20px;color:white;">
-        @Html.DisplayFor(modelItem => cat.CategoryTitle)
-
-        
-        @foreach (var subcat in cat.Subcategorias)
-        {
-            <div style="background:red;margin:5px;color:white;">
-                @Html.DisplayFor(modelItem => subcat.Title)
-            </div>
-        }
-
+    <div class="forum">
+        <div style="background:darkgray;margin:20px;color:white;">
+            @Html.DisplayFor(modelItem => cat.CategoryTitle)
+            @foreach (var subcat in cat.Subcategorias)
+            {
+                <div style="background:lightgray;margin:5px;color:white;">
+                    @Html.ActionLink(subcat.Title, "Subcategoria", "Forum", new { nomeSub = subcat.Title })
+                </div>
+            }
+        </div>
     </div>
 }
+
