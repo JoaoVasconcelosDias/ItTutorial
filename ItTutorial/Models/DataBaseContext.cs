@@ -232,6 +232,7 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
+<<<<<<< HEAD
                 entity.Property(e => e.Certa).HasColumnType("text");
 
                 entity.Property(e => e.Opcao1).HasColumnType("text");
@@ -241,12 +242,45 @@ namespace ItTutorial.Models
                 entity.Property(e => e.Opcao3).HasColumnType("text");
 
                 entity.Property(e => e.Opcao4).HasColumnType("text");
+=======
+                entity.Property(e => e.Pergunta)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Opcao1)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Opcao2)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Opcao3)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Opcao4)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+>>>>>>> 387311d6fd5b569fb79362a83adc6943c1b04971
 
                 entity.Property(e => e.Pergunta).HasColumnType("text");
 
+<<<<<<< HEAD
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
                 entity.Property(e => e.RespostaUser).HasColumnType("text");
+=======
+                entity.Property(e => e.Certa)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+>>>>>>> 387311d6fd5b569fb79362a83adc6943c1b04971
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizPergunta)
