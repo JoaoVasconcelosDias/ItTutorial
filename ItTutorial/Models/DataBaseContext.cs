@@ -231,7 +231,7 @@ namespace ItTutorial.Models
                 entity.Property(e => e.PerguntaId)
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
-
+                    
                 entity.Property(e => e.Certa).HasColumnType("text");
 
                 entity.Property(e => e.Opcao1).HasColumnType("text");
@@ -242,11 +242,11 @@ namespace ItTutorial.Models
 
                 entity.Property(e => e.Opcao4).HasColumnType("text");
 
-                entity.Property(e => e.Pergunta).HasColumnType("text");
+                entity.Property(e => e.Opcao1).HasColumnType("text");
 
-                entity.Property(e => e.QuizId).HasColumnName("QuizID");
+                entity.Property(e => e.Opcao2).HasColumnType("text");
 
-                entity.Property(e => e.RespostaUser).HasColumnType("text");
+                entity.Property(e => e.Opcao3).HasColumnType("text");
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizPergunta)

@@ -44,7 +44,7 @@ a.actionLinkImage {
     padding-left:1000px;
 }
 
-.buttonL {
+.loginButton {
     background-color: white;
     border: none;
     color: gray;
@@ -54,44 +54,27 @@ a.actionLinkImage {
     display: inline-block;
     font-size: 16px;
     width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left:40%;
-}
 
-.buttonR {
-    background-color: white;
-    border: none;
-    color: gray;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left: 50%;
 }
-
-.landing {
+/*.landing {
     position: absolute;
+
     top: 15%;
     margin-left: 25%;
 
+}*/
+.landing {
+    color: black;
+    /*margin-top: 5px;*/
+    margin-left: 5%;
+    padding-top: 10px;
+    font-family: Tahoma;
 }
 
-.landing h1{
-    color: white;
+
+.join {
+    font-style: italic;
 }
-
- .landing h2 {
-        color: white;
-    }
-
-.landing h3 {
-        color: white;
-    }
 
 .tania{
     padding-left: 400px;
@@ -102,3 +85,17 @@ a.actionLinkImage {
     font-size:larger;
 }
 
+body {
+    background-image: url("/images/fundo1.jpg");
+    background-position: center;
+}
+
+
+.loginService {
+    display: block;
+    position: absolute;
+    margin-left: 15%;
+    top: 55%;
+    padding: 15px 32px;
+    width: 125px;
+}
