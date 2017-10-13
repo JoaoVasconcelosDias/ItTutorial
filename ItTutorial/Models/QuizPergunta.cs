@@ -19,7 +19,7 @@ namespace ItTutorial.Models
         public string Opcao4 { get; set; }
         public string Certa { get; set; }
         public string RespostaUser { get; set; }
-
+      
         public Quiz Quiz { get; set; }
         public ICollection<Resultados> Resultados { get; set; }
     }
