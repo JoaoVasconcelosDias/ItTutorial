@@ -17,7 +17,7 @@ namespace ItTutorial.Controllers
         {
             return View();
         }
-//[Authorize (Roles = "Admin")]
+        //[Authorize (Roles = "Admin, User")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -31,14 +31,14 @@ namespace ItTutorial.Controllers
 
             return View();
         }
-
+        //[Authorize(Roles = "Admin, User")]
         public IActionResult Certification()
         {
             ViewData["Message"] = "Your Certification page.";
 
             return View();
         }
-
+        //[Authorize(Roles = "Admin, User")]
         public IActionResult Consola()
         {
             ViewData["Message"] = "Your Consola page.";

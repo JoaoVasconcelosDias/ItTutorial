@@ -18,11 +18,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
 			<ul class="nav navbar-nav">
 				<li class="active">
-					@Html.ActionLink("Home", "Index", "Home")
+					@Html.ActionLink("Home", "Index", "Manage")
 				</li>
                 <li>@Html.ActionLink("About", "About", "Home")</li>
 				<li class="dropdown">
@@ -112,11 +112,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <p>&copy; @DateTime.Now.Year - ItTutorial</p>
-            </div>
-        </footer>
+      
     </div>
 
     <environment names="Development">

@@ -56,7 +56,7 @@ a.actionLinkImage {
     width: 125px;
     position: absolute;
     top: 50%;
-    margin-left:43%;
+    margin-left:40%;
 }
 
 .buttonR {
@@ -76,11 +76,29 @@ a.actionLinkImage {
 
 .landing {
     position: absolute;
-    top: 30%;
+    top: 15%;
     margin-left: 25%;
+
 }
+
+.landing h1{
+    color: white;
+}
+
+ .landing h2 {
+        color: white;
+    }
+
+.landing h3 {
+        color: white;
+    }
 
 .tania{
     padding-left: 400px;
 
 }
+
+.forum {
+    font-size:larger;
+}
+
