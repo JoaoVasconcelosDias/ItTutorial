@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,9 +18,7 @@
     </environment>
 </head>
 
-<body style="background-image:";>
-
-
+<body>
     <div class="container body-content">
         @RenderBody()
  
@@ -28,8 +27,34 @@
 
     <div class="landing">
         <h1>ItTutorial</h1>
-        <h2>Learn how to improve your programming skills!</h2>
-        <h3>Login or Regist now to WATCH Videos, TAKE Quizes and JOIN our Forum</h3>
+        <h2>Do you need a place to learn developing?</h2>
+        <h2>Do you need to test your knowledge?</h2>
+        <h2>Do you need a community to help you?</h2>
+        <h2 class="join">Then join US!</h2>
+        <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Register">Sign Up</a>
+        <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Login">Log in</a>
+        @{
+            var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            if (loginProviders.Count == 0)
+            {
+                <div>
+                    <p>
+                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>
+                </div>
+            }
+            else
+            {
+                <form style="display: inline-block " asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                            @foreach (var provider in loginProviders)
+                            {
+                               <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                            }
+                </form>
+            }
+        }
+
     </div>
 
     <environment names="Development">
@@ -54,10 +79,7 @@
     </environment>
   
     @RenderSection("Scripts", required: false)
-    <ul>
-        <li class="buttonR"><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
-        <p></p>
-        <li class="buttonL"><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
-    </ul>
+    
+    
 </body>
 </html>
