@@ -48,16 +48,23 @@ a.actionLinkImage {
     background-color: lightgray;
     border: none;
     color: gray;
-    padding: 15px 32px;
+    padding: 10px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     width: 150px;
-    margin-left: 15%;
+    margin-left: 15px;
+}
+
+.primeiro {
+    margin-left: 475px;
+    padding-bottom: 15px;
+    padding-top: 20px;
 }
 
 .entrada {
+    padding-top: 10px;
     margin-left: 40%;
 }
 
@@ -100,7 +107,7 @@ body {
     width: 125px;
 }
 
-span {
+span1 {
 	text-transform: uppercase;
 }
 
@@ -226,7 +233,7 @@ span {
 			font-size: 1em;
 		}
 
-span {
+span1 {
 	font-size: 4.8em;
 	color: white;
 	position: relative;
