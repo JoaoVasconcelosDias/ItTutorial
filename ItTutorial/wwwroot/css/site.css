@@ -44,7 +44,7 @@ a.actionLinkImage {
     padding-left:1000px;
 }
 
-.buttonL {
+.loginButton {
     background-color: white;
     border: none;
     color: gray;
@@ -54,60 +54,45 @@ a.actionLinkImage {
     display: inline-block;
     font-size: 16px;
     width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left:40%;
-}
-
-.buttonR {
-    background-color: white;
-    border: none;
-    color: gray;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 125px;
-    position: absolute;
-    top: 50%;
-    margin-left: 50%;
-}
 
 .landing {
-    position: absolute;
-    top: 15%;
-    margin-left: 25%;
-
-}
-
-.landing h1{
-    color: white;
+    color: black;
+    /*margin-top: 5px;*/
+    margin-left: 5%;
+    padding-top: 10px;
+    font-family: Tahoma;
 }
 
  .landing h2 {
-        color: white;
+        text-align:center;
     }
 
-.landing h3 {
-        color: white;
-    }
+.join {
+    font-style: italic;
+}
 
 .tania{
     padding-left: 400px;
-
 }
-
+  
 .forum {
     font-size:larger;
 }
+  
+body {
+    background-image: url("/images/fundo2.jpg");
+    background-position: center;
+}
 
 
-
-
-
-
-
+.loginService {
+    display: block;
+    position: absolute;
+    margin-left: 15%;
+    top: 55%;
+    padding: 15px 32px;
+    width: 125px;
+}
 
 span {
 	text-transform: uppercase;
@@ -404,11 +389,6 @@ span {
 	}
 }
 
-
-
-
-
-
 h1 {
 	position: relative;
 	top: 200px;
@@ -416,3 +396,4 @@ h1 {
 	color: rgba(182, 15, 97, 0.9);
 	font-size: 3.5em;
 }
+
