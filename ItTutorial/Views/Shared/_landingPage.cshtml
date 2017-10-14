@@ -35,8 +35,11 @@
         <h3>Do you need to test your knowledge?</h3>
         <h3>Do you need a community to help you?</h3>
         <h3 class="join">Then join US!</h3>
-        <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Register">Sign Up</a>
-        <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Login">Log in</a>
+        <div class="primeiro">
+            <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Register">Sign up</a>
+            <a asp-area="" class="loginButton" asp-controller="Account" asp-action="Login">Log in</a>
+        </div>
+        <h3> Or Login with: </h3>
         <div class="entrada">
             @{
                 var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
