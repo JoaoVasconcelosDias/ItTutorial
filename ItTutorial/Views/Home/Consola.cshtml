@@ -17,20 +17,24 @@
 		<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 	</environment>
 	
-
-	
-
 </head>
 <body>
-	
+	<div style="margin-left:05%; 
+ font-family: Wendy One, sans-serif;font-size : 25px;color : green;
+ ">
+		<p>
+			<strong>
 
-	<h1> Practice here</h1>
+	Practice here
+</strong>	
+		</p>
+	</div>
+		
 	<div class="container">
 		<div class="row">
+			
 			<div class="col-xs-6 col-md-6">
-				
-
-
+			
 				Write your code here and press "Execute" button to compile and execute IT! :
 				<div class="CompileMethod">
 
@@ -52,7 +56,7 @@
 								<br>
 								<input type="submit" value="Execute" class="btn btn-info"> 
 
-								<span class="glyphicons glyphicons-ok-sign"></span>
+
 								<input type="reset" value="Clear" class="btn btn-danger">
 								<br>
 								<br>
@@ -63,17 +67,10 @@
 							</form>
 						}
 					</div>
-
-				
-
-
-
+			
 					</div>
-			<button type="button" style="background-color: greenyellow  ;margin-left:auto;margin-right:auto;display:block;
-		font-size : 20px;">
-	Continue to see more
-	@Html.ActionLink("Videos", "Index", "Videos/Index/3") !
-</button>
+			
+
 			<div class="col-xs-6 col-md-2" style="padding:10px;">
 				<p>
 
@@ -91,6 +88,15 @@
 
 			</div>
 		</div>
+
+	<button type="button" style="background-color: greenyellow  ;margin-left:auto;margin-right:auto;display:block;
+		font-size : 20px;">
+		Continue to see more
+		@Html.ActionLink("Videos", "Index", "Videos/Index/3") !
+	</button>
+
+
+
 
 </body>
 
