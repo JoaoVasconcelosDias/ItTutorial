@@ -396,4 +396,7 @@ h1 {
 	color: rgba(182, 15, 97, 0.9);
 	font-size: 3.5em;
 }
+.textarea{
+    align-content:flex-end
+}
 
