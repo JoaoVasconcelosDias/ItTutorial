@@ -2,102 +2,45 @@
 @using (Html.BeginForm())
 {
     <head runat="server">
+
     </head>
 
-    <body>
+   <body>
    <div>
-            
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <style type="text/css">
-                                    .container {
-                                        display: inline-block;
-                                        width: 500px;
-                                        clear: both;
-                                    }
+      
+	   	   <ul>
+				  <br />
+		 	<h3>
+		 		<strong>
+		 			@Html.DisplayNameFor(model => model.Question) :
+		 		@Html.DisplayFor(modelItem => Model.Question)
+		 </strong>
+		 </h3>
+		 		<li>
+					 @Html.DisplayNameFor(model => model.Option1) :
+			   		 @Html.DisplayFor(modelItem => Model.Option1)
+					 <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: 25px;" />
+				</li>
+		 		<li>
+			   		@Html.DisplayNameFor(model => model.Option2)  :
+					@Html.DisplayFor(modelItem => Model.Option2) 
+					 <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: 25px;" />
+		 		</li>
+				  <li>
+		  	@Html.DisplayNameFor(model => model.Option3)  :
+		  	@Html.DisplayFor(modelItem => Model.Option3)
+			<input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: 25px;" />
+				  </li>
+		 	<li>
+		 		@Html.DisplayNameFor(model => model.Option4)	:
+		   	@Html.DisplayFor(modelItem => Model.Option4)
+				 <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: 25px;" />
+	      </li>
 
-                                        .container input {
-                                            display: normal;
-                                            float: left;
-                                            clear: left;
-                                            width: 350px;
-                                            text-align: center;
-                                        }
-                                </style>
-                                <div class="container">
-                                    <h2 style="color:#27b61c;">
-                                        @Html.DisplayNameFor(model => model.Pergunta)
-                                    </h2>
-                                </div>
-                            </th>
-                            <th>
-                                <h3 style="color:#327ad3;">
-                                    @Html.DisplayNameFor(model => model.Opcao1) <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: -20px;" />
-                                </h3>
-                            </th>
-                            <th>
-                                <h3 style="color:#327ad3;">
-                                    @Html.DisplayNameFor(model => model.Opcao2) <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: -20px;" />
-                                </h3>
-                            </th>
-                            <th>
-                                <h3 style="color:#327ad3;">
-                                    @Html.DisplayNameFor(model => model.Opcao3) <input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: -20px;" />
-                                </h3>
-                            </th>
-                            <th>
-                                <h3 style="color:#327ad3;">
-                                    @Html.DisplayNameFor(model => model.Opcao4) <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: -20px;" />
-                                </h3>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-
-                                @Html.DisplayFor(modelItem => Model.Pergunta)
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <ul class="sp-list">
-                                        <li class="sp-item">
-                                            @Html.DisplayFor(modelItem => Model.Opcao1)
-                                        </li>
-                                    </ul>
-                                </fieldset>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <ul class="sp-list">
-                                        <li class="sp-item">
-                                            @Html.DisplayFor(modelItem => Model.Opcao2) 
-                                    </ul>
-                                </fieldset>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <ul class="sp-list">
-                                        <li class="sp-item">
-                                            @Html.DisplayFor(modelItem => Model.Opcao3)
-                                    </ul>
-                                </fieldset>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <ul class="sp-list">
-                                        <li class="sp-item">
-                                            @Html.DisplayFor(modelItem => Model.Opcao4)
-                                    </ul>
-                                </fieldset>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
+	   </ul>
+	      	   	   
             </div>
+           
     </body>
 }
 
