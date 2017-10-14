@@ -39,9 +39,9 @@ namespace ItTutorial.Controllers
             return View();
         }
         //[Authorize(Roles = "Admin, User")]
-        public IActionResult Consola()
+        public IActionResult Console()
         {
-            ViewData["Message"] = "Your Consola page.";
+            ViewData["Message"] = "Your Console page.";
 
             return View();
         }
@@ -60,7 +60,7 @@ namespace ItTutorial.Controllers
         }
 
         [HttpPost]
-        public IActionResult Consola(string FirstCompile)
+        public IActionResult Console(string FirstCompile)
         {           
             object resultado = CSharpScriptEngine.Execute(FirstCompile);                              
             return View(CSharpScriptEngine.Execute("new MyClass().Result"));                    
