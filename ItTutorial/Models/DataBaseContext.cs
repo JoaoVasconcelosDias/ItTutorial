@@ -231,22 +231,22 @@ namespace ItTutorial.Models
                 entity.Property(e => e.PerguntaId)
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
-                    
+
                 entity.Property(e => e.Certa).HasColumnType("text");
 
-                entity.Property(e => e.Opcao1).HasColumnType("text");
+                entity.Property(e => e.Option1).HasColumnType("text");
 
-                entity.Property(e => e.Opcao2).HasColumnType("text");
+                entity.Property(e => e.Option2).HasColumnType("text");
 
-                entity.Property(e => e.Opcao3).HasColumnType("text");
+                entity.Property(e => e.Option3).HasColumnType("text");
 
-                entity.Property(e => e.Opcao4).HasColumnType("text");
+                entity.Property(e => e.Option4).HasColumnType("text");
 
-                entity.Property(e => e.Opcao1).HasColumnType("text");
+                entity.Property(e => e.Question).HasColumnType("text");
 
-                entity.Property(e => e.Opcao2).HasColumnType("text");
+                entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
-                entity.Property(e => e.Opcao3).HasColumnType("text");
+                entity.Property(e => e.RespostaUser).HasColumnType("text");
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizPergunta)
