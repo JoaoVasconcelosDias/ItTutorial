@@ -234,15 +234,15 @@ namespace ItTutorial.Models
 
                 entity.Property(e => e.Certa).HasColumnType("text");
 
-                entity.Property(e => e.Opcao1).HasColumnType("text");
+                entity.Property(e => e.Option1).HasColumnType("text");
 
-                entity.Property(e => e.Opcao2).HasColumnType("text");
+                entity.Property(e => e.Option2).HasColumnType("text");
 
-                entity.Property(e => e.Opcao3).HasColumnType("text");
+                entity.Property(e => e.Option3).HasColumnType("text");
 
-                entity.Property(e => e.Opcao4).HasColumnType("text");
+                entity.Property(e => e.Option4).HasColumnType("text");
 
-                entity.Property(e => e.Pergunta).HasColumnType("text");
+                entity.Property(e => e.Question).HasColumnType("text");
 
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
@@ -284,6 +284,8 @@ namespace ItTutorial.Models
 
             modelBuilder.Entity<Videos>(entity =>
             {
+                entity.Property(e => e.Level).HasColumnType("nchar(20)");
+
                 entity.Property(e => e.Source)
                     .HasMaxLength(90)
                     .IsUnicode(false);

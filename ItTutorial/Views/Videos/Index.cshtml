@@ -24,8 +24,11 @@
                 <strong>
                     @Html.DisplayFor(modelItem => item.Title)
                 </strong>
+                <br />
+                <p>
+                    Level: @Html.DisplayFor(modelItem => item.Level)
+                </p>
             </td>
-
             <td>
                 @Html.ActionLink("", "DetailsVideo", "Videos", new { id = item.Id }, new {@class="actionLinkImage", @style= "background-image:url(https://i.ytimg.com/vi/"+item.Source+"/hqdefault.jpg)" })
             </td>

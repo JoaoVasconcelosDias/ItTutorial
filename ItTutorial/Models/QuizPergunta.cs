@@ -12,14 +12,14 @@ namespace ItTutorial.Models
 
         public int QuizId { get; set; }
         public int PerguntaId { get; set; }
-        public string Pergunta { get; set; }
-        public string Opcao1 { get; set; }
-        public string Opcao2 { get; set; }
-        public string Opcao3 { get; set; }
-        public string Opcao4 { get; set; }
+        public string Question { get; set; }
+        public string Option1 { get; set; }
+        public string Option2 { get; set; }
+        public string Option3 { get; set; }
+        public string Option4 { get; set; }
         public string Certa { get; set; }
         public string RespostaUser { get; set; }
-      
+
         public Quiz Quiz { get; set; }
         public ICollection<Resultados> Resultados { get; set; }
     }
