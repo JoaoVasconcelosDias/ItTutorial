@@ -154,7 +154,7 @@ namespace ItTutorial.Models
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Date).HasColumnType("date");
+                entity.Property(e => e.Date).HasColumnType("datetime");
 
                 entity.HasOne(d => d.AspNetUsers)
                     .WithMany(p => p.Comments)
@@ -187,7 +187,7 @@ namespace ItTutorial.Models
                     .IsRequired()
                     .HasMaxLength(450);
 
-                entity.Property(e => e.Date).HasColumnType("date");
+                entity.Property(e => e.Date).HasColumnType("datetime");
 
                 entity.Property(e => e.Post)
                     .IsRequired()
@@ -284,6 +284,8 @@ namespace ItTutorial.Models
 
             modelBuilder.Entity<Videos>(entity =>
             {
+                entity.Property(e => e.Level).HasColumnType("nchar(20)");
+
                 entity.Property(e => e.Source)
                     .HasMaxLength(90)
                     .IsUnicode(false);
