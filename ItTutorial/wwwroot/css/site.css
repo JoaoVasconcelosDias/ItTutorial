@@ -58,6 +58,7 @@ a.actionLinkImage {
 }
 /*.landing {
     position: absolute;
+
     top: 15%;
     margin-left: 25%;
 
@@ -97,4 +98,72 @@ body {
     top: 55%;
     padding: 15px 32px;
     width: 125px;
+}
+/*FORMATACOES PARA O FORUM*/
+
+.subcategoria a {
+    color: inherit;
+    text-decoration: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    height: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.postView tr:nth-child(odd) td {
+    width: 300px;
+    background-color: lightgray;
+    color: black;
+}
+.postView tr:nth-child(even) td{
+    width: 300px;
+    background-color: gray;
+    color: black;
+}
+
+td {
+    padding: 0.2cm;
+}
+
+.topico {
+    width:100%;
+    height:35px;
+    /*background-color: gray;*/
+    color: white;
+    margin-bottom: 1cm;
+}
+
+label {
+    font-weight: bold;
+    color: black;
+}
+
+.tituloSubcat {
+    width: 100%;
+    height: 35px;
+    background-color: gray;
+    margin-bottom: 1cm;
+}
+
+.postName tr:nth-child(odd) td{
+    width: 300px;
+    background-color: lightgray;
+    color: black;
+}
+
+.postName tr:nth-child(even) td{
+    width: 300px;
+    background-color: gray;
+    color: black;
+}
+
+.postTitleColor {
+    color: black;
 }

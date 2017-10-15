@@ -32,7 +32,10 @@ namespace ItTutorial.Controllers
             {
                 //se estivermos na subcategoria
                 
-                var result = _context.Subcategorias.Include(p => p.Posts).SingleOrDefault(p => p.Title == nomeSub);
+                var result = _context.Subcategorias
+                    .Include(p => p.Posts)
+                    .ThenInclude(c => c.AspNetUsers)
+                    .SingleOrDefault(p => p.Title == nomeSub);
                 if(result == null)
                 {
                     return RedirectToAction("Index"); 
@@ -44,13 +47,18 @@ namespace ItTutorial.Controllers
             else
             {
                 //se estivermos num post
-                var result = _context.Posts.Include(p => p.Comments).SingleOrDefault(p => p.Id == postId);
+                var result = _context.Posts
+                    .Include(p => p.Comments)
+                    .ThenInclude(c => c.AspNetUsers)
+                    .SingleOrDefault(p => p.Id == postId);
+               
                 if (result == null)
                 {
                     return RedirectToAction("Index");
                 }
                 return View("PostView", result);
             }
+            return View();
 
         }
     }

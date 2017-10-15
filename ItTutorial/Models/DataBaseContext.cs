@@ -154,7 +154,7 @@ namespace ItTutorial.Models
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Date).HasColumnType("date");
+                entity.Property(e => e.Date).HasColumnType("datetime");
 
                 entity.HasOne(d => d.AspNetUsers)
                     .WithMany(p => p.Comments)
@@ -187,7 +187,7 @@ namespace ItTutorial.Models
                     .IsRequired()
                     .HasMaxLength(450);
 
-                entity.Property(e => e.Date).HasColumnType("date");
+                entity.Property(e => e.Date).HasColumnType("datetime");
 
                 entity.Property(e => e.Post)
                     .IsRequired()
@@ -232,55 +232,21 @@ namespace ItTutorial.Models
                     .HasColumnName("PerguntaID")
                     .ValueGeneratedNever();
 
-<<<<<<< HEAD
                 entity.Property(e => e.Certa).HasColumnType("text");
 
-                entity.Property(e => e.Opcao1).HasColumnType("text");
+                entity.Property(e => e.Option1).HasColumnType("text");
 
-                entity.Property(e => e.Opcao2).HasColumnType("text");
+                entity.Property(e => e.Option2).HasColumnType("text");
 
-                entity.Property(e => e.Opcao3).HasColumnType("text");
+                entity.Property(e => e.Option3).HasColumnType("text");
 
-                entity.Property(e => e.Opcao4).HasColumnType("text");
-=======
-                entity.Property(e => e.Pergunta)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Option4).HasColumnType("text");
 
-                entity.Property(e => e.Opcao1)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.Question).HasColumnType("text");
 
-                entity.Property(e => e.Opcao2)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Opcao3)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Opcao4)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
->>>>>>> 387311d6fd5b569fb79362a83adc6943c1b04971
-
-                entity.Property(e => e.Pergunta).HasColumnType("text");
-
-<<<<<<< HEAD
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
                 entity.Property(e => e.RespostaUser).HasColumnType("text");
-=======
-                entity.Property(e => e.Certa)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
->>>>>>> 387311d6fd5b569fb79362a83adc6943c1b04971
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizPergunta)
@@ -318,6 +284,8 @@ namespace ItTutorial.Models
 
             modelBuilder.Entity<Videos>(entity =>
             {
+                entity.Property(e => e.Level).HasColumnType("nchar(20)");
+
                 entity.Property(e => e.Source)
                     .HasMaxLength(90)
                     .IsUnicode(false);
