@@ -18,8 +18,12 @@ namespace ItTutorial.Models
         public string Option3 { get; set; }
         public string Option4 { get; set; }
         public string Certa { get; set; }
+<<<<<<< HEAD
         public string RespostaUser { get; set; }
 
+=======
+        public string RespostaUser { get; set; }     
+>>>>>>> 41556fc565f133dad3eeaeb3f1f2e0b5fdb98c67
         public Quiz Quiz { get; set; }
         public ICollection<Resultados> Resultados { get; set; }
     }

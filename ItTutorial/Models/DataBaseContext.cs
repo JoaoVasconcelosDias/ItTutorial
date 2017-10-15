@@ -241,9 +241,15 @@ namespace ItTutorial.Models
                 entity.Property(e => e.Option3).HasColumnType("text");
 
                 entity.Property(e => e.Option4).HasColumnType("text");
+<<<<<<< HEAD
 
                 entity.Property(e => e.Question).HasColumnType("text");
 
+=======
+
+                entity.Property(e => e.Question).HasColumnType("text");
+
+>>>>>>> 41556fc565f133dad3eeaeb3f1f2e0b5fdb98c67
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
                 entity.Property(e => e.RespostaUser).HasColumnType("text");

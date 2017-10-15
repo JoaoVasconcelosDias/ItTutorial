@@ -2,10 +2,12 @@
 @using (Html.BeginForm())
 {
     <head runat="server">
+
     </head>
 
-    <body>
+   <body>
    <div>
+<<<<<<< HEAD
             
                 <table class="table">
                     <thead>
@@ -98,6 +100,42 @@
                     </tbody>
                 </table>
             </div>
+=======
+      
+	   	   <ul>
+				  <br />
+		 	<h3>
+		 		<strong>
+		 			@Html.DisplayNameFor(model => model.Question) :
+		 		@Html.DisplayFor(modelItem => Model.Question)
+		 </strong>
+		 </h3>
+		 		<li>
+					 @Html.DisplayNameFor(model => model.Option1) :
+			   		 @Html.DisplayFor(modelItem => Model.Option1)
+					 <input id="Radio1" runat="server" type="radio" name="recebeOpcao" value="1" style="margin: 25px;" />
+				</li>
+		 		<li>
+			   		@Html.DisplayNameFor(model => model.Option2)  :
+					@Html.DisplayFor(modelItem => Model.Option2) 
+					 <input id="Radio2" runat="server" type="radio" name="recebeOpcao" value="2" style="margin: 25px;" />
+		 		</li>
+				  <li>
+		  	@Html.DisplayNameFor(model => model.Option3)  :
+		  	@Html.DisplayFor(modelItem => Model.Option3)
+			<input id="Radio3" runat="server" type="radio" name="recebeOpcao" value="3" style="margin: 25px;" />
+				  </li>
+		 	<li>
+		 		@Html.DisplayNameFor(model => model.Option4)	:
+		   	@Html.DisplayFor(modelItem => Model.Option4)
+				 <input id="Radio4" runat="server" type="radio" name="recebeOpcao" value="4" style="margin: 25px;" />
+	      </li>
+
+	   </ul>
+	      	   	   
+            </div>
+           
+>>>>>>> 41556fc565f133dad3eeaeb3f1f2e0b5fdb98c67
     </body>
 }
 
