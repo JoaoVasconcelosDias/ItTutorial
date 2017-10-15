@@ -46,6 +46,13 @@ namespace ItTutorial.Controllers
             return View();
         }
 
+        public IActionResult Begin()
+        {
+            ViewData["Message"] = "Your home page.";
+
+            return View();
+        }
+
         //metodo
         public class CSharpScriptEngine
         {

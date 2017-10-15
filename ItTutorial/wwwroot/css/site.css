@@ -34,6 +34,12 @@
     }
 
 }
+
+.inicio {
+    text-align: center;
+    
+}
+
 a.actionLinkImage {
     display: block;
     width: 200px;
@@ -412,4 +418,5 @@ h1 {
 .textarea{
     align-content:flex-end
 }
+
 
