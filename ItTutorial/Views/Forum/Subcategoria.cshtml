@@ -4,19 +4,23 @@
     ViewData["Title"] = "SubcategoriaIndex";
 }
 
-<h2>PostsIndex</h2>
+<div class="tituloSubcat"><h2>@Html.DisplayFor(modelItem => Model.Title)</h2></div>
 <p>
-    @Html.ActionLink("Create New", "Create", "Posts")
+    @Html.ActionLink("New Topic", "Create", "Posts")
 </p>
 
-@foreach (var post in Model.Posts)
- {
-    <div>
-        @Html.DisplayFor(modelItem => post.Post)
-
-        @foreach (var comment in post.Comments)
-        {
-            @Html.ActionLink(comment.Comment, "Post", "Forum", new { nomeCom = comment.Comment })
-        }
-    </div>
- }
+<table class="postName" style="width=100%">
+    @foreach (var post in Model.Posts)
+    {
+        <tr>
+            <td>
+                <label class="postTitleColor">@Html.ActionLink(post.Post, "Subcategoria", "Forum", new { nomeSub = post.Subcategorias.Title, postId = post.Id })</label>
+            </td>
+            <td class="colunaUser">
+                Posted by: <br><strong>@post.AspNetUsers.UserName</strong>
+                <br>
+                On:<br>@post.Date<br>
+            </td>
+        </tr>
+    }
+</table>

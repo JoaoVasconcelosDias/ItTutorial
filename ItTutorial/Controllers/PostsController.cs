@@ -69,8 +69,9 @@ namespace ItTutorial.Controllers
                 posts.AspNetUsersId = user.Id;
 
 
-                DateTime localdate = DateTime.Now;
-                posts.Date = localdate;
+                DateTime now = DateTime.Now;
+                DateTime datetime = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
+                posts.Date = datetime;
 
                 _context.Add(posts);
                 await _context.SaveChangesAsync();

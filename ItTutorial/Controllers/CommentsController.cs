@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ItTutorial.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Globalization;
 
 namespace ItTutorial.Controllers
 {
@@ -68,8 +69,9 @@ namespace ItTutorial.Controllers
                 var user = await _userManager.GetUserAsync(User);
                 comments.AspNetUsersId = user.Id;
 
-                DateTime localdate = DateTime.Now;
-                comments.Date = localdate;
+                DateTime now = DateTime.Now;
+                DateTime datetime = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
+                comments.Date = datetime;
 
                 _context.Add(comments);
                 await _context.SaveChangesAsync();
