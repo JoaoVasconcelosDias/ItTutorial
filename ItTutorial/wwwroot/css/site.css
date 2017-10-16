@@ -451,6 +451,7 @@ table {
 td {
     padding: 0.2cm;
 }
+<<<<<<< HEAD
 
 .topico {
     width: 100%;
@@ -494,3 +495,41 @@ label {
 .colunaUser {
     color: #5A557F;
 }
+=======
+
+.topico {
+    width: 100%;
+    height: 35px;
+    /*background-color: gray;*/
+    color: white;
+    margin-bottom: 1cm;
+}
+
+label {
+    font-weight: bold;
+    color: black;
+}
+
+.tituloSubcat {
+    width: 100%;
+    height: 35px;
+    background-color: gray;
+    margin-bottom: 1cm;
+}
+
+.postName tr:nth-child(odd) td {
+    width: 300px;
+    background-color: lightgray;
+    color: black;
+}
+
+.postName tr:nth-child(even) td {
+    width: 300px;
+    background-color: gray;
+    color: black;
+}
+
+.postTitleColor {
+    color: black;
+}
+>>>>>>> 9431625aca9d82a569f198f5d02c15db3c5a9242
