@@ -44,6 +44,7 @@ a.actionLinkImage {
     display: block;
     width: 200px;
     height: 150px;
+    background-position-y:center;
 }
 
 .login{
@@ -419,4 +420,77 @@ h1 {
     align-content:flex-end
 }
 
+.subcategoria a {
+    color: inherit;
+    text-decoration: none;
+}
 
+table, th, td {
+    border: 1px solid black;
+    height: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.postView tr:nth-child(odd) td {
+    width: 300px;
+    background-color: lightgray;
+    color: black;
+}
+
+.postView tr:nth-child(even) td {
+    width: 300px;
+    background-color: gray;
+    color: black;
+}
+
+td {
+    padding: 0.2cm;
+}
+
+.topico {
+    width: 100%;
+    height: 35px;
+    /*background-color: gray;*/
+    color: white;
+    margin-bottom: 1cm;
+}
+
+label {
+    font-weight: bold;
+    color: black;
+}
+
+.tituloSubcat {
+    width: 100%;
+    height: 35px;
+    background-color: #B8C2ED;
+    margin-bottom: 1cm;
+    color: #F7F6FF;
+}
+
+.postName tr:nth-child(odd) td {
+    width: 300px;
+    background-color: #B5AAFF;
+    /*color: #F7F6FF;*/
+}
+
+.postName tr:nth-child(even) td {
+    width: 300px;
+    background-color: #C6C5CC;
+    /*color: #F7F6FF;*/
+}
+
+.postTitleColor a {
+    color: #5A557F;
+    /*color: inherit;*/
+    text-decoration: none;
+}
+
+.colunaUser {
+    color: #5A557F;
+}

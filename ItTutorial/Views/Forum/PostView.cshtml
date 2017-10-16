@@ -1,0 +1,27 @@
+﻿@model ItTutorial.Models.Posts
+
+@{
+    ViewData["Title"] = "PostsIndex";
+}
+<div class="topico">
+    <h2>@Html.DisplayFor(modelItem => Model.Post)</h2>
+</div>
+
+<table class="table postView" style="width:100%">
+    @foreach (var comment in Model.Comments)
+    {
+        <tr>
+            <td class="colunaUser">
+                <label>@comment.AspNetUsers.UserName</label>
+                <br>
+                @comment.Date<br>
+            </td>
+            <td class="comment">@comment.Comment</td>
+        </tr>
+
+    }
+</table>
+
+<p>
+    @Html.ActionLink("New Reply", "Create", "Comments")
+</p>
